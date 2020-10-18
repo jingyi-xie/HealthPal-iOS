@@ -1,0 +1,635 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9191A53A253C09CE00B30ACF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191A539253C09CE00B30ACF /* AppDelegate.swift */; };
+		9191A53C253C09CE00B30ACF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191A53B253C09CE00B30ACF /* SceneDelegate.swift */; };
+		9191A53E253C09CE00B30ACF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191A53D253C09CE00B30ACF /* ViewController.swift */; };
+		9191A541253C09CE00B30ACF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9191A53F253C09CE00B30ACF /* Main.storyboard */; };
+		9191A543253C09CF00B30ACF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9191A542253C09CF00B30ACF /* Assets.xcassets */; };
+		9191A546253C09CF00B30ACF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9191A544253C09CF00B30ACF /* LaunchScreen.storyboard */; };
+		9191A54B253C09CF00B30ACF /* HealthPal WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9191A54A253C09CF00B30ACF /* HealthPal WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9191A551253C09CF00B30ACF /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9191A54F253C09CF00B30ACF /* Interface.storyboard */; };
+		9191A553253C09CF00B30ACF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9191A552253C09CF00B30ACF /* Assets.xcassets */; };
+		9191A55A253C09D000B30ACF /* HealthPal WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9191A559253C09D000B30ACF /* HealthPal WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9191A55F253C09D000B30ACF /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191A55E253C09D000B30ACF /* InterfaceController.swift */; };
+		9191A561253C09D000B30ACF /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191A560253C09D000B30ACF /* ExtensionDelegate.swift */; };
+		9191A563253C09D000B30ACF /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191A562253C09D000B30ACF /* NotificationController.swift */; };
+		9191A565253C09D000B30ACF /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191A564253C09D000B30ACF /* ComplicationController.swift */; };
+		9191A567253C09D000B30ACF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9191A566253C09D000B30ACF /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9191A54C253C09CF00B30ACF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9191A52E253C09CE00B30ACF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9191A549253C09CF00B30ACF;
+			remoteInfo = "HealthPal WatchKit App";
+		};
+		9191A55B253C09D000B30ACF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9191A52E253C09CE00B30ACF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9191A558253C09D000B30ACF;
+			remoteInfo = "HealthPal WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9191A56F253C09D000B30ACF /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				9191A55A253C09D000B30ACF /* HealthPal WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9191A573253C09D000B30ACF /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				9191A54B253C09CF00B30ACF /* HealthPal WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9191A536253C09CE00B30ACF /* HealthPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9191A539253C09CE00B30ACF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9191A53B253C09CE00B30ACF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		9191A53D253C09CE00B30ACF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9191A540253C09CE00B30ACF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9191A542253C09CF00B30ACF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9191A545253C09CF00B30ACF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9191A547253C09CF00B30ACF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9191A54A253C09CF00B30ACF /* HealthPal WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HealthPal WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9191A550253C09CF00B30ACF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		9191A552253C09CF00B30ACF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9191A554253C09CF00B30ACF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9191A559253C09D000B30ACF /* HealthPal WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "HealthPal WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9191A55E253C09D000B30ACF /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		9191A560253C09D000B30ACF /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		9191A562253C09D000B30ACF /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		9191A564253C09D000B30ACF /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		9191A566253C09D000B30ACF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9191A568253C09D000B30ACF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9191A569253C09D000B30ACF /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9191A533253C09CE00B30ACF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9191A556253C09D000B30ACF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9191A52D253C09CE00B30ACF = {
+			isa = PBXGroup;
+			children = (
+				9191A538253C09CE00B30ACF /* HealthPal */,
+				9191A54E253C09CF00B30ACF /* HealthPal WatchKit App */,
+				9191A55D253C09D000B30ACF /* HealthPal WatchKit Extension */,
+				9191A537253C09CE00B30ACF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9191A537253C09CE00B30ACF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9191A536253C09CE00B30ACF /* HealthPal.app */,
+				9191A54A253C09CF00B30ACF /* HealthPal WatchKit App.app */,
+				9191A559253C09D000B30ACF /* HealthPal WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9191A538253C09CE00B30ACF /* HealthPal */ = {
+			isa = PBXGroup;
+			children = (
+				9191A539253C09CE00B30ACF /* AppDelegate.swift */,
+				9191A53B253C09CE00B30ACF /* SceneDelegate.swift */,
+				9191A53D253C09CE00B30ACF /* ViewController.swift */,
+				9191A53F253C09CE00B30ACF /* Main.storyboard */,
+				9191A542253C09CF00B30ACF /* Assets.xcassets */,
+				9191A544253C09CF00B30ACF /* LaunchScreen.storyboard */,
+				9191A547253C09CF00B30ACF /* Info.plist */,
+			);
+			path = HealthPal;
+			sourceTree = "<group>";
+		};
+		9191A54E253C09CF00B30ACF /* HealthPal WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				9191A54F253C09CF00B30ACF /* Interface.storyboard */,
+				9191A552253C09CF00B30ACF /* Assets.xcassets */,
+				9191A554253C09CF00B30ACF /* Info.plist */,
+			);
+			path = "HealthPal WatchKit App";
+			sourceTree = "<group>";
+		};
+		9191A55D253C09D000B30ACF /* HealthPal WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9191A55E253C09D000B30ACF /* InterfaceController.swift */,
+				9191A560253C09D000B30ACF /* ExtensionDelegate.swift */,
+				9191A562253C09D000B30ACF /* NotificationController.swift */,
+				9191A564253C09D000B30ACF /* ComplicationController.swift */,
+				9191A566253C09D000B30ACF /* Assets.xcassets */,
+				9191A568253C09D000B30ACF /* Info.plist */,
+				9191A569253C09D000B30ACF /* PushNotificationPayload.apns */,
+			);
+			path = "HealthPal WatchKit Extension";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9191A535253C09CE00B30ACF /* HealthPal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9191A574253C09D000B30ACF /* Build configuration list for PBXNativeTarget "HealthPal" */;
+			buildPhases = (
+				9191A532253C09CE00B30ACF /* Sources */,
+				9191A533253C09CE00B30ACF /* Frameworks */,
+				9191A534253C09CE00B30ACF /* Resources */,
+				9191A573253C09D000B30ACF /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9191A54D253C09CF00B30ACF /* PBXTargetDependency */,
+			);
+			name = HealthPal;
+			productName = HealthPal;
+			productReference = 9191A536253C09CE00B30ACF /* HealthPal.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9191A549253C09CF00B30ACF /* HealthPal WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9191A570253C09D000B30ACF /* Build configuration list for PBXNativeTarget "HealthPal WatchKit App" */;
+			buildPhases = (
+				9191A548253C09CF00B30ACF /* Resources */,
+				9191A56F253C09D000B30ACF /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9191A55C253C09D000B30ACF /* PBXTargetDependency */,
+			);
+			name = "HealthPal WatchKit App";
+			productName = "HealthPal WatchKit App";
+			productReference = 9191A54A253C09CF00B30ACF /* HealthPal WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		9191A558253C09D000B30ACF /* HealthPal WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9191A56C253C09D000B30ACF /* Build configuration list for PBXNativeTarget "HealthPal WatchKit Extension" */;
+			buildPhases = (
+				9191A555253C09D000B30ACF /* Sources */,
+				9191A556253C09D000B30ACF /* Frameworks */,
+				9191A557253C09D000B30ACF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HealthPal WatchKit Extension";
+			productName = "HealthPal WatchKit Extension";
+			productReference = 9191A559253C09D000B30ACF /* HealthPal WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9191A52E253C09CE00B30ACF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					9191A535253C09CE00B30ACF = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
+					9191A549253C09CF00B30ACF = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
+					9191A558253C09D000B30ACF = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 9191A531253C09CE00B30ACF /* Build configuration list for PBXProject "HealthPal" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9191A52D253C09CE00B30ACF;
+			productRefGroup = 9191A537253C09CE00B30ACF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9191A535253C09CE00B30ACF /* HealthPal */,
+				9191A549253C09CF00B30ACF /* HealthPal WatchKit App */,
+				9191A558253C09D000B30ACF /* HealthPal WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9191A534253C09CE00B30ACF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9191A546253C09CF00B30ACF /* LaunchScreen.storyboard in Resources */,
+				9191A543253C09CF00B30ACF /* Assets.xcassets in Resources */,
+				9191A541253C09CE00B30ACF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9191A548253C09CF00B30ACF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9191A553253C09CF00B30ACF /* Assets.xcassets in Resources */,
+				9191A551253C09CF00B30ACF /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9191A557253C09D000B30ACF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9191A567253C09D000B30ACF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9191A532253C09CE00B30ACF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9191A53E253C09CE00B30ACF /* ViewController.swift in Sources */,
+				9191A53A253C09CE00B30ACF /* AppDelegate.swift in Sources */,
+				9191A53C253C09CE00B30ACF /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9191A555253C09D000B30ACF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9191A563253C09D000B30ACF /* NotificationController.swift in Sources */,
+				9191A565253C09D000B30ACF /* ComplicationController.swift in Sources */,
+				9191A561253C09D000B30ACF /* ExtensionDelegate.swift in Sources */,
+				9191A55F253C09D000B30ACF /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9191A54D253C09CF00B30ACF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9191A549253C09CF00B30ACF /* HealthPal WatchKit App */;
+			targetProxy = 9191A54C253C09CF00B30ACF /* PBXContainerItemProxy */;
+		};
+		9191A55C253C09D000B30ACF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9191A558253C09D000B30ACF /* HealthPal WatchKit Extension */;
+			targetProxy = 9191A55B253C09D000B30ACF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9191A53F253C09CE00B30ACF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9191A540253C09CE00B30ACF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9191A544253C09CF00B30ACF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9191A545253C09CF00B30ACF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9191A54F253C09CF00B30ACF /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9191A550253C09CF00B30ACF /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9191A56A253C09D000B30ACF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9191A56B253C09D000B30ACF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		9191A56D253C09D000B30ACF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "HealthPal WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jingyi.HealthPal.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Debug;
+		};
+		9191A56E253C09D000B30ACF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "HealthPal WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jingyi.HealthPal.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Release;
+		};
+		9191A571253C09D000B30ACF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				IBSC_MODULE = HealthPal_WatchKit_Extension;
+				INFOPLIST_FILE = "HealthPal WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = jingyi.HealthPal.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Debug;
+		};
+		9191A572253C09D000B30ACF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				IBSC_MODULE = HealthPal_WatchKit_Extension;
+				INFOPLIST_FILE = "HealthPal WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = jingyi.HealthPal.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Release;
+		};
+		9191A575253C09D000B30ACF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HealthPal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jingyi.HealthPal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9191A576253C09D000B30ACF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HealthPal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jingyi.HealthPal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9191A531253C09CE00B30ACF /* Build configuration list for PBXProject "HealthPal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9191A56A253C09D000B30ACF /* Debug */,
+				9191A56B253C09D000B30ACF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9191A56C253C09D000B30ACF /* Build configuration list for PBXNativeTarget "HealthPal WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9191A56D253C09D000B30ACF /* Debug */,
+				9191A56E253C09D000B30ACF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9191A570253C09D000B30ACF /* Build configuration list for PBXNativeTarget "HealthPal WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9191A571253C09D000B30ACF /* Debug */,
+				9191A572253C09D000B30ACF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9191A574253C09D000B30ACF /* Build configuration list for PBXNativeTarget "HealthPal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9191A575253C09D000B30ACF /* Debug */,
+				9191A576253C09D000B30ACF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9191A52E253C09CE00B30ACF /* Project object */;
+}
