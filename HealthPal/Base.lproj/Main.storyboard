@@ -117,7 +117,7 @@
         <!--All Data-->
         <scene sceneID="Q2O-BS-YbI">
             <objects>
-                <viewController id="tGv-Fj-pcO" sceneMemberID="viewController">
+                <viewController id="tGv-Fj-pcO" customClass="DataController" customModule="HealthPal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GGE-HB-Qvb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -138,6 +138,9 @@
                                     <constraint firstAttribute="height" constant="90" id="gr1-3c-LH4"/>
                                 </constraints>
                                 <state key="normal" image="health_app"/>
+                                <connections>
+                                    <action selector="clickHealthApp:" destination="tGv-Fj-pcO" eventType="touchUpInside" id="3lE-fP-2La"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZO9-Re-qtw">
                                 <rect key="frame" x="38" y="147" width="299" height="90"/>
