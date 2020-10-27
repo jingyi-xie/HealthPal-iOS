@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="17156" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch38"/>
+    <device id="watch44"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="17035"/>
@@ -11,19 +11,19 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="HealthPal_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <imageView width="96" height="96" alignment="center" image="home" id="YvB-OO-33m"/>
+                        <imageView width="100" height="100" alignment="center" image="home" id="YvB-OO-33m"/>
                         <separator width="98" alignment="center" id="cA4-lD-qvi">
                             <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </separator>
-                        <group width="1" height="50" alignment="left" id="6Um-At-Xt0">
+                        <group width="1" height="0.40000000000000002" alignment="left" id="6Um-At-Xt0">
                             <items>
-                                <button width="0.5" height="0.80000000000000004" alignment="left" verticalAlignment="center" backgroundImage="weightBtn" id="shi-ae-ZtL">
+                                <button width="0.5" height="55" alignment="left" verticalAlignment="center" backgroundImage="weightBtn" id="shi-ae-ZtL">
                                     <fontDescription key="font" type="system" pointSize="9"/>
                                     <connections>
                                         <segue destination="BKR-Oh-8u7" kind="push" id="opp-y5-fSz"/>
                                     </connections>
                                 </button>
-                                <button width="0.5" height="0.80000000000000004" alignment="left" verticalAlignment="center" backgroundImage="handwashingBtn" id="eLF-5d-hv5">
+                                <button width="0.5" height="55" alignment="left" verticalAlignment="center" backgroundImage="handwashingBtn" id="eLF-5d-hv5">
                                     <fontDescription key="font" type="system" pointSize="9"/>
                                 </button>
                             </items>
@@ -31,7 +31,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="310.5"/>
+            <point key="canvasLocation" x="219.52173913043478" y="310.40178571428572"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -64,18 +64,18 @@
                     <items>
                         <group width="1" alignment="left" id="085-uu-qOt">
                             <items>
-                                <imageView width="50" height="50" alignment="center" image="scale" id="HHl-Xp-aeG"/>
+                                <imageView width="80" height="80" alignment="center" image="scale" id="HHl-Xp-aeG"/>
                             </items>
                         </group>
                         <label alignment="center" text="Number" id="DUw-z8-mZf"/>
                         <slider width="1" alignment="left" value="1" maximum="3" steps="3" id="5Xh-lt-yLm"/>
-                        <button width="136" height="32" alignment="center" title="Add" id="uco-dd-V5N">
+                        <button width="0.5" height="32" alignment="center" title="Add" id="uco-dd-V5N">
                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </button>
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="454" y="27"/>
+            <point key="canvasLocation" x="453.82608695652169" y="26.5625"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="Niz-AI-uX2">
