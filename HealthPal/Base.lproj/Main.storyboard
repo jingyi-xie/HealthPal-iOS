@@ -43,6 +43,12 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxs-Ki-fFg">
+                                <rect key="frame" x="130" y="62" width="114" height="32"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -50,14 +56,17 @@
                             <constraint firstItem="gZz-5R-cMg" firstAttribute="top" secondItem="ULI-GW-3Tc" secondAttribute="bottom" constant="74" id="1iG-km-ovm"/>
                             <constraint firstItem="gZz-5R-cMg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="26.5" id="4Uq-DN-ByS"/>
                             <constraint firstItem="fZT-ng-sjH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="39" id="E5A-m3-Thd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mxs-Ki-fFg" secondAttribute="trailing" constant="131" id="EgE-hB-GTd"/>
                             <constraint firstItem="fZT-ng-sjH" firstAttribute="top" secondItem="ULI-GW-3Tc" secondAttribute="bottom" constant="45" id="HN7-Hr-sWB"/>
                             <constraint firstItem="fZT-ng-sjH" firstAttribute="top" secondItem="D79-Ba-wqF" secondAttribute="bottom" constant="157" id="Jsv-jj-67q"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fZT-ng-sjH" secondAttribute="trailing" constant="39" id="Jxr-Fq-vyD"/>
                             <constraint firstItem="D79-Ba-wqF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="21.5" id="MZN-LU-c8h"/>
                             <constraint firstItem="fZT-ng-sjH" firstAttribute="top" secondItem="ULI-GW-3Tc" secondAttribute="bottom" constant="45" id="YC8-eK-pg6"/>
                             <constraint firstItem="ULI-GW-3Tc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="39" id="aWJ-Nu-RxA"/>
+                            <constraint firstItem="mxs-Ki-fFg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="62" id="fQD-0o-Cww"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fZT-ng-sjH" secondAttribute="bottom" constant="99" id="nJx-Dd-LGB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gZz-5R-cMg" secondAttribute="bottom" constant="213" id="nPu-4h-fiN"/>
+                            <constraint firstItem="mxs-Ki-fFg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="130" id="pw3-xF-6YX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ULI-GW-3Tc" secondAttribute="trailing" constant="39" id="tef-6e-gxc"/>
                         </constraints>
                     </view>
@@ -98,6 +107,12 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7J7-uj-r5C">
+                                <rect key="frame" x="141" y="63" width="92" height="32"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tlH-Ws-F2n"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -107,10 +122,13 @@
                             <constraint firstItem="5Dj-ca-lZM" firstAttribute="leading" secondItem="tlH-Ws-F2n" secondAttribute="leading" constant="38" id="SPY-WZ-YGo"/>
                             <constraint firstItem="rPs-2k-0b9" firstAttribute="leading" secondItem="tlH-Ws-F2n" secondAttribute="leading" constant="38" id="Xlq-Rk-Deb"/>
                             <constraint firstItem="tlH-Ws-F2n" firstAttribute="trailing" secondItem="rPs-2k-0b9" secondAttribute="trailing" constant="38" id="Xwu-S1-wpO"/>
+                            <constraint firstItem="tlH-Ws-F2n" firstAttribute="trailing" secondItem="7J7-uj-r5C" secondAttribute="trailing" constant="142" id="dkM-PV-tNc"/>
                             <constraint firstItem="ZO9-Re-qtw" firstAttribute="leading" secondItem="tlH-Ws-F2n" secondAttribute="leading" constant="38" id="hAG-zi-o9O"/>
                             <constraint firstItem="tlH-Ws-F2n" firstAttribute="trailing" secondItem="5Dj-ca-lZM" secondAttribute="trailing" constant="38" id="lAX-aJ-43s"/>
                             <constraint firstItem="5Dj-ca-lZM" firstAttribute="top" secondItem="ZO9-Re-qtw" secondAttribute="bottom" constant="44" id="lEQ-Ml-oEu"/>
                             <constraint firstItem="rPs-2k-0b9" firstAttribute="top" secondItem="5Dj-ca-lZM" secondAttribute="bottom" constant="46" id="lX8-2a-d8Z"/>
+                            <constraint firstItem="7J7-uj-r5C" firstAttribute="leading" secondItem="tlH-Ws-F2n" secondAttribute="leading" constant="141" id="nYG-yK-l0L"/>
+                            <constraint firstItem="7J7-uj-r5C" firstAttribute="top" secondItem="tlH-Ws-F2n" secondAttribute="top" constant="63" id="vL4-E4-bzK"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="All Data" image="archivebox" catalog="system" selectedImage="archivebox.fill" id="and-K7-2am"/>
