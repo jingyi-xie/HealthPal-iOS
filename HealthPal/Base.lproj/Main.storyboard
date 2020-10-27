@@ -23,6 +23,9 @@
                                     <constraint firstAttribute="height" constant="167" id="d81-WQ-4Wo"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="hand_phone"/>
+                                <connections>
+                                    <segue destination="kgn-5T-rAW" kind="show" id="G8D-bK-RRI"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULI-GW-3Tc">
                                 <rect key="frame" x="39" y="143" width="297" height="164"/>
@@ -30,6 +33,9 @@
                                     <constraint firstAttribute="height" constant="164" id="N8Y-Jd-tu7"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="weight_phone"/>
+                                <connections>
+                                    <segue destination="zSI-b7-AM5" kind="show" id="Oz5-Uj-wfA"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D79-Ba-wqF">
                                 <rect key="frame" x="178" y="171" width="62" height="24"/>
@@ -76,6 +82,38 @@
             </objects>
             <point key="canvasLocation" x="901.60000000000002" y="-117.39130434782609"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="eJy-Ak-nWf">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lle-lN-nom" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="zSI-b7-AM5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="v7C-JM-g1J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Lcc-no-Tjp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QPa-tL-fzw"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1865" y="330"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="yho-TM-KH6">
+            <objects>
+                <viewController id="kgn-5T-rAW" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fTK-dT-bxs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="SLt-ZW-C76"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LJA-15-kur"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ITZ-FA-MYt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1865" y="1164"/>
+        </scene>
         <!--All Data-->
         <scene sceneID="Q2O-BS-YbI">
             <objects>
@@ -89,23 +127,29 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="4Dr-o1-0bL"/>
                                 </constraints>
-                                <state key="normal" image="weight_data"/>
+                                <state key="normal" image="wash_data"/>
+                                <connections>
+                                    <segue destination="kgn-5T-rAW" kind="show" id="E5E-LF-aIO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPs-2k-0b9">
                                 <rect key="frame" x="38" y="417" width="299" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="gr1-3c-LH4"/>
                                 </constraints>
-                                <state key="normal" image="wash_data"/>
+                                <state key="normal" image="health_app"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZO9-Re-qtw">
                                 <rect key="frame" x="38" y="147" width="299" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="dkJ-qa-j4k"/>
                                 </constraints>
-                                <state key="normal" image="new_data">
+                                <state key="normal" image="weight_data">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="zSI-b7-AM5" kind="show" id="O6x-xz-BrF"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7J7-uj-r5C">
                                 <rect key="frame" x="141" y="63" width="92" height="32"/>
@@ -135,7 +179,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Orn-8j-bMV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="901.60000000000002" y="567.16641679160421"/>
+            <point key="canvasLocation" x="902" y="1296"/>
+        </scene>
+        <!--New Data-->
+        <scene sceneID="zNG-Hh-7Pc">
+            <objects>
+                <viewController id="8DA-e4-ti4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FmY-ek-MES">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="YeN-cN-B8R"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="New Data" image="plus.circle" catalog="system" selectedImage="plus.circle.fill" id="gdH-h3-K9O"/>
+                    <navigationItem key="navigationItem" id="yef-rc-KjJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QIl-IT-VTO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="902" y="595"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="fwC-yr-NFN">
@@ -148,22 +209,29 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="L5v-bc-vah"/>
-                        <segue destination="tGv-Fj-pcO" kind="relationship" relationship="viewControllers" id="Wwy-Xb-waK"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="IDC-9M-imX"/>
+                        <segue destination="8DA-e4-ti4" kind="relationship" relationship="viewControllers" id="yh9-e4-RHC"/>
+                        <segue destination="tGv-Fj-pcO" kind="relationship" relationship="viewControllers" id="Q0q-Mb-fDz"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="slZ-yE-SCp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="13.043478260869566" y="103.79464285714285"/>
+            <point key="canvasLocation" x="-178" y="594"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="E5E-LF-aIO"/>
+        <segue reference="O6x-xz-BrF"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="archivebox" catalog="system" width="128" height="106"/>
         <image name="archivebox.fill" catalog="system" width="128" height="106"/>
         <image name="hand_phone" width="450" height="275"/>
+        <image name="health_app" width="450" height="150"/>
         <image name="heart.text.square" catalog="system" width="128" height="114"/>
         <image name="heart.text.square.fill" catalog="system" width="128" height="114"/>
-        <image name="new_data" width="450" height="150"/>
+        <image name="plus.circle" catalog="system" width="128" height="121"/>
+        <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <image name="wash_data" width="450" height="150"/>
         <image name="weight_data" width="450" height="150"/>
         <image name="weight_phone" width="450" height="275"/>
