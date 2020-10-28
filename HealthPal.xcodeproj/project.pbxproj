@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		918A64E32547FB5600B38FAA /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918A64E22547FB5600B38FAA /* DataController.swift */; };
+		918A64E32547FB5600B38FAA /* AllDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918A64E22547FB5600B38FAA /* AllDataController.swift */; };
 		9191A53A253C09CE00B30ACF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191A539253C09CE00B30ACF /* AppDelegate.swift */; };
 		9191A53C253C09CE00B30ACF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191A53B253C09CE00B30ACF /* SceneDelegate.swift */; };
 		9191A541253C09CE00B30ACF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9191A53F253C09CE00B30ACF /* Main.storyboard */; };
@@ -27,6 +27,7 @@
 		91DBBF502549180400A744E3 /* HandWashData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DBBF4C2549180400A744E3 /* HandWashData+CoreDataProperties.swift */; };
 		91DBBF512549180400A744E3 /* WeightData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DBBF4D2549180400A744E3 /* WeightData+CoreDataClass.swift */; };
 		91DBBF522549180400A744E3 /* WeightData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DBBF4E2549180400A744E3 /* WeightData+CoreDataProperties.swift */; };
+		91DBBF5B254918BC00A744E3 /* NewDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DBBF5A254918BC00A744E3 /* NewDataController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +73,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		918A64E22547FB5600B38FAA /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		918A64E22547FB5600B38FAA /* AllDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDataController.swift; sourceTree = "<group>"; };
 		9191A536253C09CE00B30ACF /* HealthPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9191A539253C09CE00B30ACF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9191A53B253C09CE00B30ACF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +98,7 @@
 		91DBBF4C2549180400A744E3 /* HandWashData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HandWashData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		91DBBF4D2549180400A744E3 /* WeightData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeightData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		91DBBF4E2549180400A744E3 /* WeightData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeightData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		91DBBF5A254918BC00A744E3 /* NewDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDataController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,11 +146,12 @@
 				9191A539253C09CE00B30ACF /* AppDelegate.swift */,
 				9191A53B253C09CE00B30ACF /* SceneDelegate.swift */,
 				9191A53F253C09CE00B30ACF /* Main.storyboard */,
-				918A64E22547FB5600B38FAA /* DataController.swift */,
+				918A64E22547FB5600B38FAA /* AllDataController.swift */,
 				9191A542253C09CF00B30ACF /* Assets.xcassets */,
 				9191A544253C09CF00B30ACF /* LaunchScreen.storyboard */,
 				9191A547253C09CF00B30ACF /* Info.plist */,
 				91DBBF4525490E2400A744E3 /* HealthPal.xcdatamodeld */,
+				91DBBF5A254918BC00A744E3 /* NewDataController.swift */,
 			);
 			path = HealthPal;
 			sourceTree = "<group>";
@@ -320,12 +323,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9191A53A253C09CE00B30ACF /* AppDelegate.swift in Sources */,
+				91DBBF5B254918BC00A744E3 /* NewDataController.swift in Sources */,
 				91DBBF512549180400A744E3 /* WeightData+CoreDataClass.swift in Sources */,
 				91DBBF502549180400A744E3 /* HandWashData+CoreDataProperties.swift in Sources */,
 				91DBBF522549180400A744E3 /* WeightData+CoreDataProperties.swift in Sources */,
 				91DBBF4F2549180400A744E3 /* HandWashData+CoreDataClass.swift in Sources */,
 				91DBBF4725490E2400A744E3 /* HealthPal.xcdatamodeld in Sources */,
-				918A64E32547FB5600B38FAA /* DataController.swift in Sources */,
+				918A64E32547FB5600B38FAA /* AllDataController.swift in Sources */,
 				9191A53C253C09CE00B30ACF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
