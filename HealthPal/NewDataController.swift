@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class NewDataController: UIViewController, UITextFieldDelegate {
+class NewDataController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var TypeSegControl: UISegmentedControl!
     @IBOutlet weak var ValueInput: UITextField!
@@ -18,6 +18,10 @@ class NewDataController: UIViewController, UITextFieldDelegate {
     
     // context for core data
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    // picker view for unit
+    let units = ["lbs", "kg"]
+    var unitPickerView = UIPickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +37,12 @@ class NewDataController: UIViewController, UITextFieldDelegate {
         // tap gesture to dismiss the keyboard
         let Tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(Tap);
+        
+        // set up delegate of picker views
+        unitPickerView.delegate = self
+        unitPickerView.dataSource = self
+        UnitInput.inputView = unitPickerView
+        UnitInput.text = "lbs"
     }
     
     // when click anywhere outside of the keyboard, dismiss the keyboard
@@ -86,14 +96,14 @@ class NewDataController: UIViewController, UITextFieldDelegate {
         do {
             try self.context.save()
             self.ValueInput.text = ""
-            self.UnitInput.text = ""
+            self.UnitInput.text = "lbs"
             self.performSegue(withIdentifier: "returnToSummary", sender: self)
             self.showAlert(title: "Success", message: "New Data Added!")
         }
         catch {
             self.showAlert(title: "Error", message: "Failed to save data!")
             self.ValueInput.text = ""
-            self.UnitInput.text = ""
+            self.UnitInput.text = "lbs"
         }
     }
     
@@ -103,6 +113,25 @@ class NewDataController: UIViewController, UITextFieldDelegate {
             alert.dismiss(animated: true, completion: nil)
         }))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    // MARK: - picker view
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return units.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return units[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        UnitInput.text = units[row]
+        UnitInput.resignFirstResponder()
     }
     
 }
