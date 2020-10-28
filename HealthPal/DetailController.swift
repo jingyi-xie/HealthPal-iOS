@@ -10,6 +10,7 @@ import Charts
 
 class DetailController: UIViewController, ChartViewDelegate {
 
+    @IBOutlet weak var unitSegControl: UISegmentedControl!
     var chartView = LineChartView()
     var weightData = [WeightData]()
     var handData = [HandWashData]()
@@ -22,7 +23,7 @@ class DetailController: UIViewController, ChartViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         chartView.delegate = self
-        
+        unitSegControl.isHidden = type == "hand"
         fetchData()
         updateGraph()
     }
@@ -88,6 +89,13 @@ class DetailController: UIViewController, ChartViewDelegate {
         chartView.data = data
     }
     
+    @IBAction func changeUnit(_ sender: Any) {
+        fetchData()
+        updateGraph()
+    }
     
-
+    @IBAction func clickHealthApp(_ sender: Any) {
+        UIApplication.shared.open(URL(string: "x-apple-health://")!)
+    }
+    
 }

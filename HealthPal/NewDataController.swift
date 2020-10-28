@@ -86,12 +86,12 @@ class NewDataController: UIViewController, UITextFieldDelegate, UIPickerViewDele
             let newWeightData = WeightData(context: context)
             newWeightData.value = Int64(self.ValueInput.text!)!
             newWeightData.unit = self.UnitInput.text
-            newWeightData.time = Date()
+            newWeightData.date = Date()
         }
         // hand washing
         else {
             let newHandWashData = HandWashData(context: context)
-            newHandWashData.time = Date()
+            newHandWashData.date = Date()
         }
         do {
             try self.context.save()

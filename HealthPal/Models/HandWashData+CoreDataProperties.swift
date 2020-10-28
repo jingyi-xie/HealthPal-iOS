@@ -2,7 +2,7 @@
 //  HandWashData+CoreDataProperties.swift
 //  HealthPal
 //
-//  Created by Jaryn on 2020/10/27.
+//  Created by Jaryn on 2020/10/28.
 //
 //
 
@@ -16,7 +16,8 @@ extension HandWashData {
         return NSFetchRequest<HandWashData>(entityName: "HandWashData")
     }
 
-    @NSManaged public var time: Date?
+    @NSManaged public var date: Date?
+    @NSManaged public var times: Int64
 
 }
 
