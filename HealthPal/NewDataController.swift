@@ -90,8 +90,29 @@ class NewDataController: UIViewController, UITextFieldDelegate, UIPickerViewDele
         }
         // hand washing
         else {
-            let newHandWashData = HandWashData(context: context)
-            newHandWashData.date = Date()
+            var washData: [HandWashData] = []
+            var targetData: HandWashData? = nil
+            do {
+                washData = try context.fetch(HandWashData.fetchRequest())
+            }
+            catch {
+                print("Failed to fetch handwashing data")
+            }
+            let calendar = Calendar.current
+            for data in washData {
+                if calendar.isDateInToday(data.date!) {
+                    targetData = data
+                    break
+                }
+            }
+            if targetData != nil {
+                targetData?.times += 1
+            }
+            else {
+                let newHandWashData = HandWashData(context: context)
+                newHandWashData.times = 1
+                newHandWashData.date = Date()
+            }
         }
         do {
             try self.context.save()
