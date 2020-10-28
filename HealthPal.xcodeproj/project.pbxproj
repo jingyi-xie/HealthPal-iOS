@@ -22,6 +22,7 @@
 		9191A563253C09D000B30ACF /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191A562253C09D000B30ACF /* NotificationController.swift */; };
 		9191A565253C09D000B30ACF /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191A564253C09D000B30ACF /* ComplicationController.swift */; };
 		9191A567253C09D000B30ACF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9191A566253C09D000B30ACF /* Assets.xcassets */; };
+		91DBBF4725490E2400A744E3 /* HealthPal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91DBBF4525490E2400A744E3 /* HealthPal.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		9191A566253C09D000B30ACF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9191A568253C09D000B30ACF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9191A569253C09D000B30ACF /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		91DBBF4625490E2400A744E3 /* HealthPal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HealthPal.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				9191A542253C09CF00B30ACF /* Assets.xcassets */,
 				9191A544253C09CF00B30ACF /* LaunchScreen.storyboard */,
 				9191A547253C09CF00B30ACF /* Info.plist */,
+				91DBBF4525490E2400A744E3 /* HealthPal.xcdatamodeld */,
 			);
 			path = HealthPal;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9191A53A253C09CE00B30ACF /* AppDelegate.swift in Sources */,
+				91DBBF4725490E2400A744E3 /* HealthPal.xcdatamodeld in Sources */,
 				918A64E32547FB5600B38FAA /* DataController.swift in Sources */,
 				9191A53C253C09CE00B30ACF /* SceneDelegate.swift in Sources */,
 			);
@@ -630,6 +634,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		91DBBF4525490E2400A744E3 /* HealthPal.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				91DBBF4625490E2400A744E3 /* HealthPal.xcdatamodel */,
+			);
+			currentVersion = 91DBBF4625490E2400A744E3 /* HealthPal.xcdatamodel */;
+			path = HealthPal.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9191A52E253C09CE00B30ACF /* Project object */;
 }
