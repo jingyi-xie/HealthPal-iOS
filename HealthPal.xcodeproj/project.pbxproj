@@ -28,6 +28,7 @@
 		91DBBF512549180400A744E3 /* WeightData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DBBF4D2549180400A744E3 /* WeightData+CoreDataClass.swift */; };
 		91DBBF522549180400A744E3 /* WeightData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DBBF4E2549180400A744E3 /* WeightData+CoreDataProperties.swift */; };
 		91DBBF5B254918BC00A744E3 /* NewDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DBBF5A254918BC00A744E3 /* NewDataController.swift */; };
+		91DBBF6025492CA000A744E3 /* SummaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DBBF5F25492CA000A744E3 /* SummaryController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		91DBBF4D2549180400A744E3 /* WeightData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeightData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		91DBBF4E2549180400A744E3 /* WeightData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeightData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		91DBBF5A254918BC00A744E3 /* NewDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDataController.swift; sourceTree = "<group>"; };
+		91DBBF5F25492CA000A744E3 /* SummaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				9191A547253C09CF00B30ACF /* Info.plist */,
 				91DBBF4525490E2400A744E3 /* HealthPal.xcdatamodeld */,
 				91DBBF5A254918BC00A744E3 /* NewDataController.swift */,
+				91DBBF5F25492CA000A744E3 /* SummaryController.swift */,
 			);
 			path = HealthPal;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				91DBBF5B254918BC00A744E3 /* NewDataController.swift in Sources */,
 				91DBBF512549180400A744E3 /* WeightData+CoreDataClass.swift in Sources */,
 				91DBBF502549180400A744E3 /* HandWashData+CoreDataProperties.swift in Sources */,
+				91DBBF6025492CA000A744E3 /* SummaryController.swift in Sources */,
 				91DBBF522549180400A744E3 /* WeightData+CoreDataProperties.swift in Sources */,
 				91DBBF4F2549180400A744E3 /* HandWashData+CoreDataClass.swift in Sources */,
 				91DBBF4725490E2400A744E3 /* HealthPal.xcdatamodeld in Sources */,

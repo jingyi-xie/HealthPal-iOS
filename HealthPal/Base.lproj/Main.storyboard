@@ -11,7 +11,7 @@
         <!--Summary-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HealthPal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="summary" id="BYZ-38-t0r" customClass="SummaryController" customModule="HealthPal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,6 +77,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Summary" image="heart.text.square" catalog="system" selectedImage="heart.text.square.fill" id="2sT-FA-Aqa"/>
+                    <navigationItem key="navigationItem" id="cyH-mD-o8C"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -240,6 +241,9 @@
                                 <rect key="frame" x="98" y="458" width="178" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="submit"/>
+                                <connections>
+                                    <action selector="clickSubmit:" destination="8DA-e4-ti4" eventType="touchUpInside" id="kUG-a0-3ta"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YeN-cN-B8R"/>
@@ -253,9 +257,11 @@
                         <outlet property="UnitLabel" destination="8RL-8I-2tK" id="JHh-M4-GGB"/>
                         <outlet property="ValueInput" destination="tZi-8D-Vjf" id="dZs-45-Av1"/>
                         <outlet property="ValueLabel" destination="hdM-8X-Dhh" id="3ba-3L-5YD"/>
+                        <segue destination="36B-tJ-hBp" kind="unwind" identifier="returnToSummary" unwindAction="backFromNewData:" id="Kmo-oK-ajr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QIl-IT-VTO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="36B-tJ-hBp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="901.60000000000002" y="594.15292353823088"/>
         </scene>
