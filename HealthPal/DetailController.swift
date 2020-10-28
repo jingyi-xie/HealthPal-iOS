@@ -7,6 +7,7 @@
 
 import UIKit
 import Charts
+import CoreData
 
 class DetailController: UIViewController, ChartViewDelegate {
 
@@ -20,6 +21,9 @@ class DetailController: UIViewController, ChartViewDelegate {
     var average: Double = 0
     var type: String = "weight"
     
+    // context for core data
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         chartView.delegate = self
@@ -29,11 +33,20 @@ class DetailController: UIViewController, ChartViewDelegate {
     }
     
     func fetchData() {
+        do {
+            self.weightData = try context.fetch(WeightData.fetchRequest())
+            self.handData = try context.fetch(HandWashData.fetchRequest())
+            self.weightData = self.weightData.sorted(by: { $0.date! > $1.date! })
+            self.handData = self.handData.sorted(by: { $0.date! > $1.date! })
+        }
+        catch {
+            print("Failed to fetch core data")
+        }
         if type == "weight" {
             
         }
         else if type == "hand" {
-            
+           
         }
     }
     
