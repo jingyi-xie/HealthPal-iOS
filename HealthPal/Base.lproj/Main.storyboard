@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Summary-->
+        <!--Summary Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="summary" id="BYZ-38-t0r" customClass="SummaryController" customModule="HealthPal" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,15 +16,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZT-ng-sjH">
-                                <rect key="frame" x="39" y="352" width="297" height="167"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZT-ng-sjH">
+                                <rect key="frame" x="39" y="354" width="297" height="167"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="297" id="DcI-nM-cAc"/>
                                     <constraint firstAttribute="height" constant="167" id="d81-WQ-4Wo"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="hand_phone"/>
                                 <connections>
-                                    <segue destination="kgn-5T-rAW" kind="show" id="G8D-bK-RRI"/>
+                                    <segue destination="kgn-5T-rAW" kind="show" id="qpX-KL-Wpy"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULI-GW-3Tc">
@@ -34,7 +34,7 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="weight_phone"/>
                                 <connections>
-                                    <segue destination="zSI-b7-AM5" kind="show" id="Oz5-Uj-wfA"/>
+                                    <segue destination="zSI-b7-AM5" kind="show" id="kAG-27-SSA"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D79-Ba-wqF">
@@ -50,7 +50,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxs-Ki-fFg">
-                                <rect key="frame" x="130" y="62" width="114" height="32"/>
+                                <rect key="frame" x="130" y="77" width="114" height="32"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="24"/>
                                 <color key="textColor" systemColor="systemIndigoColor"/>
                                 <nil key="highlightedColor"/>
@@ -69,26 +69,25 @@
                             <constraint firstItem="D79-Ba-wqF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="21.5" id="MZN-LU-c8h"/>
                             <constraint firstItem="fZT-ng-sjH" firstAttribute="top" secondItem="ULI-GW-3Tc" secondAttribute="bottom" constant="45" id="YC8-eK-pg6"/>
                             <constraint firstItem="ULI-GW-3Tc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="39" id="aWJ-Nu-RxA"/>
-                            <constraint firstItem="mxs-Ki-fFg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="62" id="fQD-0o-Cww"/>
+                            <constraint firstItem="mxs-Ki-fFg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="33" id="fQD-0o-Cww"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fZT-ng-sjH" secondAttribute="bottom" constant="99" id="nJx-Dd-LGB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gZz-5R-cMg" secondAttribute="bottom" constant="213" id="nPu-4h-fiN"/>
                             <constraint firstItem="mxs-Ki-fFg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="130" id="pw3-xF-6YX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ULI-GW-3Tc" secondAttribute="trailing" constant="39" id="tef-6e-gxc"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Summary" image="heart.text.square" catalog="system" selectedImage="heart.text.square.fill" id="2sT-FA-Aqa"/>
                     <navigationItem key="navigationItem" id="cyH-mD-o8C"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="901.60000000000002" y="-117.39130434782609"/>
+            <point key="canvasLocation" x="-476" y="1382.1589205397302"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="eJy-Ak-nWf">
             <objects>
                 <viewController id="zSI-b7-AM5" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v7C-JM-g1J">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Lcc-no-Tjp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -97,14 +96,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lle-lN-nom" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1865" y="330"/>
+            <point key="canvasLocation" x="-476" y="2214"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="yho-TM-KH6">
             <objects>
                 <viewController id="kgn-5T-rAW" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fTK-dT-bxs">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="SLt-ZW-C76"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -113,9 +112,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ITZ-FA-MYt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1865" y="1164"/>
+            <point key="canvasLocation" x="1844" y="2213"/>
         </scene>
-        <!--All Data-->
+        <!--All Data Controller-->
         <scene sceneID="Q2O-BS-YbI">
             <objects>
                 <viewController id="tGv-Fj-pcO" customClass="AllDataController" customModule="HealthPal" customModuleProvider="target" sceneMemberID="viewController">
@@ -124,17 +123,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Dj-ca-lZM">
-                                <rect key="frame" x="38" y="281" width="299" height="90"/>
+                                <rect key="frame" x="38" y="325" width="299" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="4Dr-o1-0bL"/>
                                 </constraints>
                                 <state key="normal" image="wash_data"/>
                                 <connections>
-                                    <segue destination="kgn-5T-rAW" kind="show" id="E5E-LF-aIO"/>
+                                    <segue destination="kgn-5T-rAW" kind="show" id="dTF-id-4KQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPs-2k-0b9">
-                                <rect key="frame" x="38" y="417" width="299" height="90"/>
+                                <rect key="frame" x="38" y="461" width="299" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="gr1-3c-LH4"/>
                                 </constraints>
@@ -144,7 +143,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZO9-Re-qtw">
-                                <rect key="frame" x="38" y="147" width="299" height="90"/>
+                                <rect key="frame" x="38" y="191" width="299" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="dkJ-qa-j4k"/>
                                 </constraints>
@@ -152,11 +151,11 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="zSI-b7-AM5" kind="show" id="O6x-xz-BrF"/>
+                                    <segue destination="zSI-b7-AM5" kind="show" id="2H9-jb-Nbt"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7J7-uj-r5C">
-                                <rect key="frame" x="141" y="63" width="92" height="32"/>
+                                <rect key="frame" x="141" y="107" width="92" height="32"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="24"/>
                                 <color key="textColor" systemColor="systemIndigoColor"/>
                                 <nil key="highlightedColor"/>
@@ -179,11 +178,11 @@
                             <constraint firstItem="7J7-uj-r5C" firstAttribute="top" secondItem="tlH-Ws-F2n" secondAttribute="top" constant="63" id="vL4-E4-bzK"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="All Data" image="archivebox" catalog="system" selectedImage="archivebox.fill" id="and-K7-2am"/>
+                    <navigationItem key="navigationItem" id="Xki-Pe-uny"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Orn-8j-bMV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="902" y="1296"/>
+            <point key="canvasLocation" x="2783.1999999999998" y="1381.2593703148427"/>
         </scene>
         <!--New Data-->
         <scene sceneID="zNG-Hh-7Pc">
@@ -263,7 +262,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QIl-IT-VTO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="36B-tJ-hBp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="901.60000000000002" y="594.15292353823088"/>
+            <point key="canvasLocation" x="760.79999999999995" y="1381.2593703148427"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="fwC-yr-NFN">
@@ -276,19 +275,57 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="IDC-9M-imX"/>
+                        <segue destination="7kg-0b-kyI" kind="relationship" relationship="viewControllers" id="IDC-9M-imX"/>
                         <segue destination="8DA-e4-ti4" kind="relationship" relationship="viewControllers" id="yh9-e4-RHC"/>
-                        <segue destination="tGv-Fj-pcO" kind="relationship" relationship="viewControllers" id="Q0q-Mb-fDz"/>
+                        <segue destination="VUN-vK-hsp" kind="relationship" relationship="viewControllers" id="Q0q-Mb-fDz"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="slZ-yE-SCp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-178" y="594"/>
         </scene>
+        <!--Summary-->
+        <scene sceneID="gCP-h7-7JT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7kg-0b-kyI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Summary" image="heart.text.square" catalog="system" selectedImage="heart.text.square.fill" id="2sT-FA-Aqa"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bBR-7i-GbZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ayh-B1-rUP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IAi-s5-Mh4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1415.2" y="1382.1589205397302"/>
+        </scene>
+        <!--All Data-->
+        <scene sceneID="B2N-Fl-R2b">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VUN-vK-hsp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="All Data" image="archivebox" catalog="system" selectedImage="archivebox.fill" id="and-K7-2am"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PJ6-lu-XqQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tGv-Fj-pcO" kind="relationship" relationship="rootViewController" id="WMF-TB-jXz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TGB-nW-m5s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1844" y="1381.2593703148427"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="G8D-bK-RRI"/>
-        <segue reference="Oz5-Uj-wfA"/>
+        <segue reference="qpX-KL-Wpy"/>
+        <segue reference="kAG-27-SSA"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="archivebox" catalog="system" width="128" height="106"/>
