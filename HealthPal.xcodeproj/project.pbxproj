@@ -23,6 +23,10 @@
 		9191A565253C09D000B30ACF /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191A564253C09D000B30ACF /* ComplicationController.swift */; };
 		9191A567253C09D000B30ACF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9191A566253C09D000B30ACF /* Assets.xcassets */; };
 		91DBBF4725490E2400A744E3 /* HealthPal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91DBBF4525490E2400A744E3 /* HealthPal.xcdatamodeld */; };
+		91DBBF4F2549180400A744E3 /* HandWashData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DBBF4B2549180400A744E3 /* HandWashData+CoreDataClass.swift */; };
+		91DBBF502549180400A744E3 /* HandWashData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DBBF4C2549180400A744E3 /* HandWashData+CoreDataProperties.swift */; };
+		91DBBF512549180400A744E3 /* WeightData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DBBF4D2549180400A744E3 /* WeightData+CoreDataClass.swift */; };
+		91DBBF522549180400A744E3 /* WeightData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DBBF4E2549180400A744E3 /* WeightData+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +93,10 @@
 		9191A568253C09D000B30ACF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9191A569253C09D000B30ACF /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		91DBBF4625490E2400A744E3 /* HealthPal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HealthPal.xcdatamodel; sourceTree = "<group>"; };
+		91DBBF4B2549180400A744E3 /* HandWashData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HandWashData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		91DBBF4C2549180400A744E3 /* HandWashData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HandWashData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		91DBBF4D2549180400A744E3 /* WeightData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeightData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		91DBBF4E2549180400A744E3 /* WeightData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeightData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +140,7 @@
 		9191A538253C09CE00B30ACF /* HealthPal */ = {
 			isa = PBXGroup;
 			children = (
+				91DBBF562549180F00A744E3 /* Models */,
 				9191A539253C09CE00B30ACF /* AppDelegate.swift */,
 				9191A53B253C09CE00B30ACF /* SceneDelegate.swift */,
 				9191A53F253C09CE00B30ACF /* Main.storyboard */,
@@ -166,6 +175,17 @@
 				9191A569253C09D000B30ACF /* PushNotificationPayload.apns */,
 			);
 			path = "HealthPal WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		91DBBF562549180F00A744E3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				91DBBF4B2549180400A744E3 /* HandWashData+CoreDataClass.swift */,
+				91DBBF4C2549180400A744E3 /* HandWashData+CoreDataProperties.swift */,
+				91DBBF4D2549180400A744E3 /* WeightData+CoreDataClass.swift */,
+				91DBBF4E2549180400A744E3 /* WeightData+CoreDataProperties.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +320,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9191A53A253C09CE00B30ACF /* AppDelegate.swift in Sources */,
+				91DBBF512549180400A744E3 /* WeightData+CoreDataClass.swift in Sources */,
+				91DBBF502549180400A744E3 /* HandWashData+CoreDataProperties.swift in Sources */,
+				91DBBF522549180400A744E3 /* WeightData+CoreDataProperties.swift in Sources */,
+				91DBBF4F2549180400A744E3 /* HandWashData+CoreDataClass.swift in Sources */,
 				91DBBF4725490E2400A744E3 /* HealthPal.xcdatamodeld in Sources */,
 				918A64E32547FB5600B38FAA /* DataController.swift in Sources */,
 				9191A53C253C09CE00B30ACF /* SceneDelegate.swift in Sources */,
