@@ -43,4 +43,17 @@ class AllDataController: UIViewController {
 
     }
     
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination as! DetailController
+        if(segue.identifier == "clickWeight"){
+            dest.type = "weight"
+            dest.navigationItem.title = "Weight Data"
+        }
+        else if(segue.identifier == "clickHand"){
+            dest.type = "hand"
+            dest.navigationItem.title = "Handwashing Data"
+        }
+    }
+    
 }
