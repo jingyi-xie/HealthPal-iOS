@@ -52,10 +52,17 @@ class DetailController: UIViewController, ChartViewDelegate {
                 if (graphValues.count == 7) {
                     break
                 }
-                sum += data.value
-                maxLimit = max(maxLimit, data.value)
-                minLimit = min(minLimit, data.value)
-                graphValues.append(data.value)
+                var convertedValue: Int64;
+                if unitSegControl.selectedSegmentIndex == 0 {
+                    convertedValue = data.unit == "lbs" ? data.value : Int64(Double(data.value) * 2.2);
+                }
+                else {
+                    convertedValue = data.unit == "kg" ? data.value : Int64(Double(data.value) * 0.45);
+                }
+                sum += convertedValue
+                maxLimit = max(maxLimit, convertedValue)
+                minLimit = min(minLimit, convertedValue)
+                graphValues.append(convertedValue)
             }
             graphValues.reverse()
             if (graphValues.count != 0) {
@@ -81,19 +88,17 @@ class DetailController: UIViewController, ChartViewDelegate {
         chartView.xAxis.gridLineDashLengths = [10, 10]
         chartView.xAxis.gridLineDashPhase = 0
         
-        let ll1 = ChartLimitLine(limit: Double(average), label: "Average")
+        let ll1 = ChartLimitLine(limit: Double(average))
         ll1.lineWidth = 4
-        ll1.lineDashLengths = [5, 5]
-        ll1.labelPosition = .topRight
-        ll1.valueFont = .systemFont(ofSize: 10)
+        ll1.lineDashLengths = [15, 15]
         
         let leftAxis = chartView.leftAxis
         leftAxis.removeAllLimitLines()
         if type == "weight" {
             leftAxis.addLimitLine(ll1)
         }
-        leftAxis.axisMaximum = Double(maxLimit + 100)
-        leftAxis.axisMinimum = Double(max(minLimit - 50, 0))
+        leftAxis.axisMaximum = Double(maxLimit + (type == "weight" ? 25 : 3))
+        leftAxis.axisMinimum = Double(max(minLimit - (type == "weight" ? 25 : 3), 0))
         leftAxis.gridLineDashLengths = [5, 5]
         leftAxis.drawLimitLinesBehindDataEnabled = true
         leftAxis.drawLabelsEnabled = false
@@ -119,7 +124,7 @@ class DetailController: UIViewController, ChartViewDelegate {
         set1.lineWidth = 1
         set1.circleRadius = 3
         set1.drawCircleHoleEnabled = false
-        set1.valueFont = .systemFont(ofSize: 9)
+        set1.valueFont = UIFont(name: "HelveticaNeue-Bold", size: 10) ?? .systemFont(ofSize: 10)
         set1.formLineDashLengths = [5, 2.5]
         set1.formLineWidth = 1
         set1.formSize = 15
