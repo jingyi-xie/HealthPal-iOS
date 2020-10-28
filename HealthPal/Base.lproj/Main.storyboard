@@ -23,9 +23,6 @@
                                     <constraint firstAttribute="height" constant="167" id="d81-WQ-4Wo"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="hand_phone"/>
-                                <connections>
-                                    <segue destination="kgn-5T-rAW" kind="show" id="qpX-KL-Wpy"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULI-GW-3Tc">
                                 <rect key="frame" x="39" y="143" width="297" height="164"/>
@@ -33,9 +30,6 @@
                                     <constraint firstAttribute="height" constant="164" id="N8Y-Jd-tu7"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="weight_phone"/>
-                                <connections>
-                                    <segue destination="zSI-b7-AM5" kind="show" id="kAG-27-SSA"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D79-Ba-wqF">
                                 <rect key="frame" x="176" y="171" width="66.5" height="24"/>
@@ -77,12 +71,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cyH-mD-o8C"/>
+                    <connections>
+                        <segue destination="zSI-b7-AM5" kind="show" id="ZH1-wS-ZMO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-476" y="1382.1589205397302"/>
         </scene>
-        <!--View Controller-->
+        <!--Data-->
         <scene sceneID="eJy-Ak-nWf">
             <objects>
                 <viewController id="zSI-b7-AM5" sceneMemberID="viewController">
@@ -92,27 +89,11 @@
                         <viewLayoutGuide key="safeArea" id="Lcc-no-Tjp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="QPa-tL-fzw"/>
+                    <navigationItem key="navigationItem" title="Data" id="QPa-tL-fzw"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lle-lN-nom" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-476" y="2214"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="yho-TM-KH6">
-            <objects>
-                <viewController id="kgn-5T-rAW" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fTK-dT-bxs">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="SLt-ZW-C76"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="LJA-15-kur"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ITZ-FA-MYt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1844" y="2213"/>
+            <point key="canvasLocation" x="761" y="2221"/>
         </scene>
         <!--All Data Controller-->
         <scene sceneID="Q2O-BS-YbI">
@@ -128,9 +109,6 @@
                                     <constraint firstAttribute="height" constant="90" id="4Dr-o1-0bL"/>
                                 </constraints>
                                 <state key="normal" image="wash_data"/>
-                                <connections>
-                                    <segue destination="kgn-5T-rAW" kind="show" id="dTF-id-4KQ"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPs-2k-0b9">
                                 <rect key="frame" x="38" y="461" width="299" height="90"/>
@@ -150,9 +128,6 @@
                                 <state key="normal" image="weight_data">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <segue destination="zSI-b7-AM5" kind="show" id="2H9-jb-Nbt"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7J7-uj-r5C">
                                 <rect key="frame" x="141" y="107" width="92" height="32"/>
@@ -179,6 +154,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Xki-Pe-uny"/>
+                    <connections>
+                        <segue destination="zSI-b7-AM5" kind="show" id="l6T-5C-zAY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Orn-8j-bMV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -324,8 +302,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="qpX-KL-Wpy"/>
-        <segue reference="kAG-27-SSA"/>
+        <segue reference="l6T-5C-zAY"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="archivebox" catalog="system" width="128" height="106"/>

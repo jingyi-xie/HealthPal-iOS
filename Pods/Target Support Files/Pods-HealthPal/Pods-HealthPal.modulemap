@@ -1,0 +1,6 @@
+framework module Pods_HealthPal {
+  umbrella header "Pods-HealthPal-umbrella.h"
+
+  export *
+  module * { export * }
+}
