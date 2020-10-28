@@ -12,6 +12,8 @@ import CoreData
 class DetailController: UIViewController, ChartViewDelegate {
 
     @IBOutlet weak var unitSegControl: UISegmentedControl!
+    @IBOutlet weak var dataTable: UITableView!
+    
     var chartView = LineChartView()
     var weightData = [WeightData]()
     var handData = [HandWashData]()
@@ -30,6 +32,8 @@ class DetailController: UIViewController, ChartViewDelegate {
         unitSegControl.isHidden = type == "hand"
         fetchData()
         updateGraph()
+        dataTable.delegate = self
+        dataTable.dataSource = self
     }
     
     func fetchData() {
@@ -148,10 +152,49 @@ class DetailController: UIViewController, ChartViewDelegate {
     @IBAction func changeUnit(_ sender: Any) {
         fetchData()
         updateGraph()
+        dataTable.reloadData()
     }
     
     @IBAction func clickHealthApp(_ sender: Any) {
         UIApplication.shared.open(URL(string: "x-apple-health://")!)
     }
+}
+
+extension DetailController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // for later: remove data
+    }
+}
+
+extension DetailController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return type == "weight" ? weightData.count : handData.count
+    }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = dataTable.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DataTableCell
+        cell.dataImg.image = UIImage(named: "checked")
+        if type == "weight" {
+            let curData: WeightData = weightData[indexPath.row]
+            var convertedValue: Int64;
+            if unitSegControl.selectedSegmentIndex == 0 {
+                convertedValue = curData.unit == "lbs" ? curData.value : Int64(Double(curData.value) * 2.2);
+            }
+            else {
+                convertedValue = curData.unit == "kg" ? curData.value : Int64(Double(curData.value) * 0.45);
+            }
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+            cell.dateLabel.text = dateFormatter.string(from: curData.date!)
+            cell.valueLabel.text = "\(convertedValue) \(unitSegControl.selectedSegmentIndex == 0 ? "lbs" : "kg")"
+        }
+        else {
+            let curData: HandWashData = handData[indexPath.row]
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+            cell.dateLabel.text = dateFormatter.string(from: curData.date!)
+            cell.valueLabel.text = "\(curData.times) time(s)"
+        }
+        return cell
+    }
 }

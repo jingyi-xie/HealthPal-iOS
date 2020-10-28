@@ -27,6 +27,7 @@
 		91C137012549F9B7006B40E4 /* HandWashData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C136FD2549F9B7006B40E4 /* HandWashData+CoreDataProperties.swift */; };
 		91C137022549F9B7006B40E4 /* WeightData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C136FE2549F9B7006B40E4 /* WeightData+CoreDataClass.swift */; };
 		91C137032549F9B7006B40E4 /* WeightData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C136FF2549F9B7006B40E4 /* WeightData+CoreDataProperties.swift */; };
+		91C13712254A1A65006B40E4 /* DataTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C13711254A1A65006B40E4 /* DataTableCell.swift */; };
 		91DBBF4725490E2400A744E3 /* HealthPal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91DBBF4525490E2400A744E3 /* HealthPal.xcdatamodeld */; };
 		91DBBF5B254918BC00A744E3 /* NewDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DBBF5A254918BC00A744E3 /* NewDataController.swift */; };
 		91DBBF6025492CA000A744E3 /* SummaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DBBF5F25492CA000A744E3 /* SummaryController.swift */; };
@@ -107,6 +108,7 @@
 		91C136FD2549F9B7006B40E4 /* HandWashData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HandWashData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		91C136FE2549F9B7006B40E4 /* WeightData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeightData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		91C136FF2549F9B7006B40E4 /* WeightData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeightData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		91C13711254A1A65006B40E4 /* DataTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTableCell.swift; sourceTree = "<group>"; };
 		91DBBF4625490E2400A744E3 /* HealthPal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HealthPal.xcdatamodel; sourceTree = "<group>"; };
 		91DBBF5A254918BC00A744E3 /* NewDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDataController.swift; sourceTree = "<group>"; };
 		91DBBF5F25492CA000A744E3 /* SummaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryController.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				91DBBF5A254918BC00A744E3 /* NewDataController.swift */,
 				91DBBF5F25492CA000A744E3 /* SummaryController.swift */,
 				91F0CE522549D55700825D12 /* DetailController.swift */,
+				91C13711254A1A65006B40E4 /* DataTableCell.swift */,
 			);
 			path = HealthPal;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				91C137022549F9B7006B40E4 /* WeightData+CoreDataClass.swift in Sources */,
 				91DBBF5B254918BC00A744E3 /* NewDataController.swift in Sources */,
 				91F0CE532549D55700825D12 /* DetailController.swift in Sources */,
+				91C13712254A1A65006B40E4 /* DataTableCell.swift in Sources */,
 				91DBBF6025492CA000A744E3 /* SummaryController.swift in Sources */,
 				91C137012549F9B7006B40E4 /* HandWashData+CoreDataProperties.swift in Sources */,
 				91DBBF4725490E2400A744E3 /* HealthPal.xcdatamodeld in Sources */,
