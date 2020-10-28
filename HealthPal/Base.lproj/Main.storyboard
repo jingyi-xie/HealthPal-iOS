@@ -23,6 +23,9 @@
                                     <constraint firstAttribute="height" constant="167" id="d81-WQ-4Wo"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="hand_phone"/>
+                                <connections>
+                                    <segue destination="zSI-b7-AM5" kind="show" identifier="clickHand" id="hKl-wM-Vj1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULI-GW-3Tc">
                                 <rect key="frame" x="39" y="143" width="297" height="164"/>
@@ -31,7 +34,7 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="weight_phone"/>
                                 <connections>
-                                    <segue destination="zSI-b7-AM5" kind="show" id="tIh-Rk-0Aq"/>
+                                    <segue destination="zSI-b7-AM5" kind="show" identifier="clickWeight" id="kzv-Ja-55n"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D79-Ba-wqF">
@@ -74,15 +77,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cyH-mD-o8C"/>
-                    <connections>
-                        <segue destination="zSI-b7-AM5" kind="show" identifier="showData" id="ZH1-wS-ZMO"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-476" y="1382.1589205397302"/>
         </scene>
-        <!--Data-->
+        <!--Detail Controller-->
         <scene sceneID="eJy-Ak-nWf">
             <objects>
                 <viewController id="zSI-b7-AM5" customClass="DetailController" customModule="HealthPal" customModuleProvider="target" sceneMemberID="viewController">
@@ -130,7 +130,7 @@
                             <constraint firstItem="Oia-UL-Gm6" firstAttribute="top" secondItem="Lcc-no-Tjp" secondAttribute="top" constant="233" id="zdR-H4-WmV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Data" id="QPa-tL-fzw"/>
+                    <navigationItem key="navigationItem" id="QPa-tL-fzw"/>
                     <connections>
                         <outlet property="unitSegControl" destination="Wle-Gi-yw3" id="snv-2z-Qzg"/>
                     </connections>
@@ -153,6 +153,9 @@
                                     <constraint firstAttribute="height" constant="90" id="4Dr-o1-0bL"/>
                                 </constraints>
                                 <state key="normal" image="wash_data"/>
+                                <connections>
+                                    <segue destination="zSI-b7-AM5" kind="show" identifier="clickHand" id="NjB-i6-ASs"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPs-2k-0b9">
                                 <rect key="frame" x="38" y="461" width="299" height="90"/>
@@ -172,6 +175,9 @@
                                 <state key="normal" image="weight_data">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="zSI-b7-AM5" kind="show" identifier="clickWeight" id="gsK-uY-TYx"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7J7-uj-r5C">
                                 <rect key="frame" x="141" y="107" width="92" height="32"/>
@@ -198,9 +204,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Xki-Pe-uny"/>
-                    <connections>
-                        <segue destination="zSI-b7-AM5" kind="show" identifier="showData" id="l6T-5C-zAY"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Orn-8j-bMV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -374,7 +377,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tIh-Rk-0Aq"/>
+        <segue reference="NjB-i6-ASs"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="archivebox" catalog="system" width="128" height="106"/>

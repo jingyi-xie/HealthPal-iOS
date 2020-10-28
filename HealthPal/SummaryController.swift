@@ -26,16 +26,20 @@ class SummaryController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination as! DetailController
+        if(segue.identifier == "clickWeight"){
+            dest.type = "weight"
+            dest.navigationItem.title = "Weight Data"
+        }
+        else if(segue.identifier == "clickHand"){
+            dest.type = "hand"
+            dest.navigationItem.title = "Handwashing Data"
+        }
+    }
+
     @IBAction func backFromNewData(_ segue: UIStoryboardSegue) {
         self.tabBarController?.selectedIndex = 0
     }
