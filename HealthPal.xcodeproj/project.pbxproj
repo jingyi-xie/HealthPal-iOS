@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -30,6 +30,7 @@
 		91DBBF522549180400A744E3 /* WeightData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DBBF4E2549180400A744E3 /* WeightData+CoreDataProperties.swift */; };
 		91DBBF5B254918BC00A744E3 /* NewDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DBBF5A254918BC00A744E3 /* NewDataController.swift */; };
 		91DBBF6025492CA000A744E3 /* SummaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DBBF5F25492CA000A744E3 /* SummaryController.swift */; };
+		91F0CE532549D55700825D12 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F0CE522549D55700825D12 /* DetailController.swift */; };
 		A619F063DDC46F96F158C8CD /* Pods_HealthPal_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCA77EF714A433B519DCD6A /* Pods_HealthPal_WatchKit_App.framework */; };
 		D414D5EE3D0AD1B9F8524929 /* Pods_HealthPal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A0835F1A53B8DCD1D00BEB /* Pods_HealthPal.framework */; };
 /* End PBXBuildFile section */
@@ -109,6 +110,7 @@
 		91DBBF4E2549180400A744E3 /* WeightData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeightData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		91DBBF5A254918BC00A744E3 /* NewDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDataController.swift; sourceTree = "<group>"; };
 		91DBBF5F25492CA000A744E3 /* SummaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryController.swift; sourceTree = "<group>"; };
+		91F0CE522549D55700825D12 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 		9FFA5B43506E8216B39E0711 /* Pods-HealthPal WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthPal WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-HealthPal WatchKit App/Pods-HealthPal WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
 		C18D38BFE991CE97C4A4A5CF /* Pods-HealthPal WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthPal WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-HealthPal WatchKit Extension/Pods-HealthPal WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
 		C22156AC7554E2CB1ADE8C53 /* Pods-HealthPal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthPal.release.xcconfig"; path = "Target Support Files/Pods-HealthPal/Pods-HealthPal.release.xcconfig"; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				91DBBF4525490E2400A744E3 /* HealthPal.xcdatamodeld */,
 				91DBBF5A254918BC00A744E3 /* NewDataController.swift */,
 				91DBBF5F25492CA000A744E3 /* SummaryController.swift */,
+				91F0CE522549D55700825D12 /* DetailController.swift */,
 			);
 			path = HealthPal;
 			sourceTree = "<group>";
@@ -238,7 +241,6 @@
 				0A226423206DDEAA0A34FE0E /* Pods-HealthPal WatchKit Extension.debug.xcconfig */,
 				C18D38BFE991CE97C4A4A5CF /* Pods-HealthPal WatchKit Extension.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -466,6 +468,7 @@
 			files = (
 				9191A53A253C09CE00B30ACF /* AppDelegate.swift in Sources */,
 				91DBBF5B254918BC00A744E3 /* NewDataController.swift in Sources */,
+				91F0CE532549D55700825D12 /* DetailController.swift in Sources */,
 				91DBBF512549180400A744E3 /* WeightData+CoreDataClass.swift in Sources */,
 				91DBBF502549180400A744E3 /* HandWashData+CoreDataProperties.swift in Sources */,
 				91DBBF6025492CA000A744E3 /* SummaryController.swift in Sources */,
