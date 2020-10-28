@@ -15,10 +15,10 @@ class DetailController: UIViewController, ChartViewDelegate {
     var chartView = LineChartView()
     var weightData = [WeightData]()
     var handData = [HandWashData]()
-    var graphValues = [ChartDataEntry]()
-    var maxLimit: Int = 0
-    var minLimit: Int = 0
-    var average: Double = 0
+    var graphValues = [Int64]()
+    var maxLimit: Int64 = Int64.max
+    var minLimit: Int64 = 0
+    var average: Int64 = 0
     var type: String = "weight"
     
     // context for core data
@@ -42,11 +42,36 @@ class DetailController: UIViewController, ChartViewDelegate {
         catch {
             print("Failed to fetch core data")
         }
+        graphValues.removeAll()
+        minLimit = Int64.max
+        maxLimit = 0
+        average = 0
         if type == "weight" {
-            
+            var sum : Int64 = 0
+            for data in weightData {
+                if (graphValues.count == 7) {
+                    break
+                }
+                sum += data.value
+                maxLimit = max(maxLimit, data.value)
+                minLimit = min(minLimit, data.value)
+                graphValues.append(data.value)
+            }
+            graphValues.reverse()
+            if (graphValues.count != 0) {
+                average = sum / Int64(graphValues.count)
+            }
         }
         else if type == "hand" {
-           
+            for data in handData {
+                if (graphValues.count == 7) {
+                    break
+                }
+                maxLimit = max(maxLimit, data.times)
+                minLimit = min(minLimit, data.times)
+                graphValues.append(data.times)
+            }
+            graphValues.reverse()
         }
     }
     
@@ -56,7 +81,7 @@ class DetailController: UIViewController, ChartViewDelegate {
         chartView.xAxis.gridLineDashLengths = [10, 10]
         chartView.xAxis.gridLineDashPhase = 0
         
-        let ll1 = ChartLimitLine(limit: average, label: "Average")
+        let ll1 = ChartLimitLine(limit: Double(average), label: "Average")
         ll1.lineWidth = 4
         ll1.lineDashLengths = [5, 5]
         ll1.labelPosition = .topRight
@@ -64,9 +89,11 @@ class DetailController: UIViewController, ChartViewDelegate {
         
         let leftAxis = chartView.leftAxis
         leftAxis.removeAllLimitLines()
-        leftAxis.addLimitLine(ll1)
-        leftAxis.axisMaximum = Double(maxLimit)
-        leftAxis.axisMinimum = Double(minLimit)
+        if type == "weight" {
+            leftAxis.addLimitLine(ll1)
+        }
+        leftAxis.axisMaximum = Double(maxLimit + 100)
+        leftAxis.axisMinimum = Double(max(minLimit - 50, 0))
         leftAxis.gridLineDashLengths = [5, 5]
         leftAxis.drawLimitLinesBehindDataEnabled = true
         leftAxis.drawLabelsEnabled = false
@@ -74,12 +101,16 @@ class DetailController: UIViewController, ChartViewDelegate {
         chartView.rightAxis.enabled = false
         chartView.xAxis.enabled = false
         chartView.legend.form = .line
-        chartView.animate(xAxisDuration: 1)
+        chartView.animate(xAxisDuration: 0.5)
         
-        chartView.frame = CGRect(x: 0, y: 75, width: self.view.frame.size.width, height: 200)
+        chartView.frame = CGRect(x: 0, y: 75, width: self.view.frame.size.width * 0.95, height: 200)
+        chartView.center.x = self.view.center.x
         view.addSubview(chartView)
-        
-        let set1 = LineChartDataSet(entries: graphValues)
+        var graphEntries = [ChartDataEntry]()
+        for i in 1..<graphValues.count + 1 {
+            graphEntries.append(ChartDataEntry(x: Double(i), y: Double(graphValues[i - 1])))
+        }
+        let set1 = LineChartDataSet(entries: graphEntries, label: type == "weight" ? "Weight" : "Handwashing")
         set1.drawIconsEnabled = false
         set1.lineDashLengths = [5, 2.5]
         set1.highlightLineDashLengths = [5, 2.5]
@@ -100,6 +131,13 @@ class DetailController: UIViewController, ChartViewDelegate {
         set1.drawFilledEnabled = true
         let data = LineChartData(dataSet: set1)
         chartView.data = data
+        if self.graphValues.count == 0 {
+            let label = UILabel(frame: CGRect(x: 200, y: 160, width: 200, height: 20))
+            label.center.x = self.view.center.x
+            label.textAlignment = .center
+            label.text = "No data found"
+            self.view.addSubview(label)
+        }
     }
     
     @IBAction func changeUnit(_ sender: Any) {
