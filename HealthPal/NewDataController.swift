@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import HealthKit
 
 class NewDataController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
@@ -18,6 +19,9 @@ class NewDataController: UIViewController, UITextFieldDelegate, UIPickerViewDele
     
     // context for core data
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    // health kit store
+    let healthKitStore: HKHealthStore = HKHealthStore()
     
     // picker view for unit
     let units = ["lbs", "kg"]
@@ -43,6 +47,8 @@ class NewDataController: UIViewController, UITextFieldDelegate, UIPickerViewDele
         unitPickerView.dataSource = self
         UnitInput.inputView = unitPickerView
         UnitInput.text = "lbs"
+        
+        checkHealthPermission()
     }
     
     // when click anywhere outside of the keyboard, dismiss the keyboard
@@ -79,7 +85,7 @@ class NewDataController: UIViewController, UITextFieldDelegate, UIPickerViewDele
     @IBAction func clickSubmit(_ sender: Any) {
         // weight
         if self.TypeSegControl.selectedSegmentIndex == 0 {
-            if (self.ValueInput.text == "" || self.UnitInput.text == "") {
+            if (self.ValueInput.text == "" || self.UnitInput.text == "" || Int64(self.ValueInput.text!) == nil) {
                 self.showAlert(title: "Warning", message: "Please provide a valid value and unit")
                 return
             }
@@ -87,6 +93,7 @@ class NewDataController: UIViewController, UITextFieldDelegate, UIPickerViewDele
             newWeightData.value = Int64(self.ValueInput.text!)!
             newWeightData.unit = self.UnitInput.text
             newWeightData.date = Date()
+            saveWeightToHealth()
         }
         // hand washing
         else {
@@ -134,6 +141,37 @@ class NewDataController: UIViewController, UITextFieldDelegate, UIPickerViewDele
             alert.dismiss(animated: true, completion: nil)
         }))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func checkHealthPermission() {
+        if !HKHealthStore.isHealthDataAvailable() {
+            print("health data not available on the device")
+            return
+        }
+        let obj1: HKObjectType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass)!
+        let obj2: HKObjectType = HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.handwashingEvent)!
+        if healthKitStore.authorizationStatus(for: obj1) != HKAuthorizationStatus.sharingAuthorized || healthKitStore.authorizationStatus(for: obj2) != HKAuthorizationStatus.sharingAuthorized {
+            let toRead: Set<HKObjectType> = []
+            let toWrite: Set<HKSampleType> = [HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass)!, HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.handwashingEvent)!]
+            healthKitStore.requestAuthorization(toShare: toWrite, read: toRead){(success, error) -> Void in print("Authorization success")}
+        }
+    }
+    
+    func saveWeightToHealth() {
+        if !HKHealthStore.isHealthDataAvailable() {
+            print("health data not available on the device")
+            return
+        }
+        let weight = UnitInput.text == "lbs" ? Double(ValueInput.text!)! : Double(ValueInput.text!)! * 2.2
+        let today = Date()
+        if let type = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass) {
+            let quantity = HKQuantity(unit: HKUnit.pound(), doubleValue: weight)
+            let data = HKQuantitySample(type: type, quantity: quantity, start: today, end: today)
+            healthKitStore.save(data) {(success, error) -> Void in
+                print("Saved new weight data")
+                
+            }
+        }
     }
     
     

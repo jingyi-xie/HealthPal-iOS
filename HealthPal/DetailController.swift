@@ -191,7 +191,7 @@ extension DetailController: UITableViewDataSource {
         else {
             let curData: HandWashData = handData[indexPath.row]
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+            dateFormatter.dateFormat = "yyyy-MM-dd"
             cell.dateLabel.text = dateFormatter.string(from: curData.date!)
             cell.valueLabel.text = "\(curData.times) time(s)"
         }
