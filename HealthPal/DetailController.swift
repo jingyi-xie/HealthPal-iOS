@@ -34,6 +34,7 @@ class DetailController: UIViewController, ChartViewDelegate {
         updateGraph()
         dataTable.delegate = self
         dataTable.dataSource = self
+        chartView.setExtraOffsets(left: 20, top: 5, right: 20, bottom: 5)
     }
     
     func fetchData() {
@@ -93,8 +94,9 @@ class DetailController: UIViewController, ChartViewDelegate {
         chartView.xAxis.gridLineDashPhase = 0
         
         let ll1 = ChartLimitLine(limit: Double(average))
-        ll1.lineWidth = 4
+        ll1.lineWidth = 2
         ll1.lineDashLengths = [15, 15]
+        ll1.lineColor = .blue
         
         let leftAxis = chartView.leftAxis
         leftAxis.removeAllLimitLines()
@@ -112,7 +114,7 @@ class DetailController: UIViewController, ChartViewDelegate {
         chartView.legend.form = .line
         chartView.animate(xAxisDuration: 0.5)
         
-        chartView.frame = CGRect(x: 0, y: 75, width: self.view.frame.size.width * 0.95, height: 200)
+        chartView.frame = CGRect(x: 0, y: 75, width: self.view.frame.size.width, height: 200)
         chartView.center.x = self.view.center.x
         view.addSubview(chartView)
         var graphEntries = [ChartDataEntry]()
@@ -128,14 +130,17 @@ class DetailController: UIViewController, ChartViewDelegate {
         set1.lineWidth = 1
         set1.circleRadius = 3
         set1.drawCircleHoleEnabled = false
-        set1.valueFont = UIFont(name: "HelveticaNeue-Bold", size: 10) ?? .systemFont(ofSize: 10)
+        set1.valueFont = UIFont(name: "HelveticaNeue-bold", size: 15) ?? .systemFont(ofSize: 15)
+        set1.valueColors = [UIColor.blue]
+        set1.circleColors = [UIColor.blue]
+
         set1.formLineDashLengths = [5, 2.5]
         set1.formLineWidth = 1
         set1.formSize = 15
-        let gradientColors = [ChartColorTemplates.colorFromString("#00ff0000").cgColor,
-                              ChartColorTemplates.colorFromString("#ffff0000").cgColor]
+        let gradientColors = [ChartColorTemplates.colorFromString("#7400b8").cgColor,
+                              ChartColorTemplates.colorFromString("#80ffdb").cgColor]
         let gradient = CGGradient(colorsSpace: nil, colors: gradientColors as CFArray, locations: nil)!
-        set1.fillAlpha = 1
+        set1.fillAlpha = 0.5
         set1.fill = Fill(linearGradient: gradient, angle: 90)
         set1.drawFilledEnabled = true
         let data = LineChartData(dataSet: set1)
