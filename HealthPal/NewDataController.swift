@@ -120,6 +120,7 @@ class NewDataController: UIViewController, UITextFieldDelegate, UIPickerViewDele
                 newHandWashData.times = 1
                 newHandWashData.date = Date()
             }
+            saveHandwashingToHealth()
         }
         do {
             try self.context.save()
@@ -170,6 +171,20 @@ class NewDataController: UIViewController, UITextFieldDelegate, UIPickerViewDele
             healthKitStore.save(data) {(success, error) -> Void in
                 print("Saved new weight data")
                 
+            }
+        }
+    }
+    
+    func saveHandwashingToHealth() {
+        if !HKHealthStore.isHealthDataAvailable() {
+            print("health data not available on the device")
+            return
+        }
+        let today = Date()
+        if let type = HKSampleType.categoryType(forIdentifier: HKCategoryTypeIdentifier.handwashingEvent) {
+            let data = HKCategorySample(type: type, value: HKCategoryValue.notApplicable.rawValue, start: today, end: today + 20)
+            healthKitStore.save(data) {(success, error) -> Void in
+                print("Saved handwashing data")
             }
         }
     }
