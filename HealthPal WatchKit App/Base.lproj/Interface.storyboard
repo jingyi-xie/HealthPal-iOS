@@ -25,13 +25,16 @@
                                 </button>
                                 <button width="0.5" height="55" alignment="left" verticalAlignment="center" backgroundImage="handwashingBtn" id="eLF-5d-hv5">
                                     <fontDescription key="font" type="system" pointSize="9"/>
+                                    <connections>
+                                        <segue destination="nkm-9V-8qI" kind="push" id="fbw-tg-VQX"/>
+                                    </connections>
                                 </button>
                             </items>
                         </group>
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="219.52173913043478" y="310.40178571428572"/>
+            <point key="canvasLocation" x="183" y="-53"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -48,7 +51,7 @@
                     </connections>
                 </notificationController>
             </objects>
-            <point key="canvasLocation" x="220" y="643"/>
+            <point key="canvasLocation" x="209" y="481"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
@@ -57,10 +60,10 @@
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
         </scene>
-        <!--Interface Controller-->
+        <!--Weight Controller-->
         <scene sceneID="dIA-hY-v0j">
             <objects>
-                <controller id="BKR-Oh-8u7">
+                <controller id="BKR-Oh-8u7" customClass="WeightController" customModule="HealthPal_WatchKit_Extension">
                     <items>
                         <group width="1" alignment="left" id="085-uu-qOt">
                             <items>
@@ -75,7 +78,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="453.82608695652169" y="26.5625"/>
+            <point key="canvasLocation" x="461" y="-227"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="Niz-AI-uX2">
@@ -84,8 +87,27 @@
             </objects>
             <point key="canvasLocation" x="468" y="345"/>
         </scene>
+        <!--Wash Controller-->
+        <scene sceneID="vNq-BO-cwj">
+            <objects>
+                <controller id="nkm-9V-8qI" customClass="WashController" customModule="HealthPal_WatchKit_Extension">
+                    <items>
+                        <timer width="1" height="0.34999999999999998" alignment="center" textAlignment="center" enabled="YES" format="short" previewedSeconds="20" id="dNI-qE-8r0">
+                            <fontDescription key="font" type="system" pointSize="28"/>
+                            <calendarUnit key="units" second="YES"/>
+                        </timer>
+                        <imageView width="101" height="101" alignment="center" verticalAlignment="center" image="hand-washing" id="FqB-oK-oMR"/>
+                    </items>
+                    <connections>
+                        <outlet property="timer" destination="dNI-qE-8r0" id="SbO-j0-qXC"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="459.73913043478257" y="73.616071428571431"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="hand-washing" width="512" height="512"/>
         <image name="handwashingBtn" width="405" height="245"/>
         <image name="home" width="358" height="358"/>
         <image name="scale" width="512" height="512"/>

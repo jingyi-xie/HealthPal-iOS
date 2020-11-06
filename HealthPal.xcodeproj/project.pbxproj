@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		071ECD056B40C4E18C712E61 /* Pods_HealthPal_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83C2D9F452DBED1B7742D88D /* Pods_HealthPal_WatchKit_Extension.framework */; };
+		916539412555B19700E8FFD4 /* WeightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916539402555B19700E8FFD4 /* WeightController.swift */; };
+		916539462555B54D00E8FFD4 /* WashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916539452555B54D00E8FFD4 /* WashController.swift */; };
 		918A64E32547FB5600B38FAA /* AllDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918A64E22547FB5600B38FAA /* AllDataController.swift */; };
 		9191A53A253C09CE00B30ACF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191A539253C09CE00B30ACF /* AppDelegate.swift */; };
 		9191A53C253C09CE00B30ACF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191A53B253C09CE00B30ACF /* SceneDelegate.swift */; };
@@ -85,6 +87,8 @@
 		77A0835F1A53B8DCD1D00BEB /* Pods_HealthPal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthPal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AEA72D19AAA63E7518FE89D /* Pods-HealthPal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthPal.debug.xcconfig"; path = "Target Support Files/Pods-HealthPal/Pods-HealthPal.debug.xcconfig"; sourceTree = "<group>"; };
 		83C2D9F452DBED1B7742D88D /* Pods_HealthPal_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthPal_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		916539402555B19700E8FFD4 /* WeightController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightController.swift; sourceTree = "<group>"; };
+		916539452555B54D00E8FFD4 /* WashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashController.swift; sourceTree = "<group>"; };
 		918A64E22547FB5600B38FAA /* AllDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDataController.swift; sourceTree = "<group>"; };
 		9191A536253C09CE00B30ACF /* HealthPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9191A539253C09CE00B30ACF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -219,12 +223,14 @@
 			isa = PBXGroup;
 			children = (
 				9191A55E253C09D000B30ACF /* InterfaceController.swift */,
+				916539402555B19700E8FFD4 /* WeightController.swift */,
 				9191A560253C09D000B30ACF /* ExtensionDelegate.swift */,
 				9191A562253C09D000B30ACF /* NotificationController.swift */,
 				9191A564253C09D000B30ACF /* ComplicationController.swift */,
 				9191A566253C09D000B30ACF /* Assets.xcassets */,
 				9191A568253C09D000B30ACF /* Info.plist */,
 				9191A569253C09D000B30ACF /* PushNotificationPayload.apns */,
+				916539452555B54D00E8FFD4 /* WashController.swift */,
 			);
 			path = "HealthPal WatchKit Extension";
 			sourceTree = "<group>";
@@ -494,7 +500,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				916539462555B54D00E8FFD4 /* WashController.swift in Sources */,
 				9191A563253C09D000B30ACF /* NotificationController.swift in Sources */,
+				916539412555B19700E8FFD4 /* WeightController.swift in Sources */,
 				9191A565253C09D000B30ACF /* ComplicationController.swift in Sources */,
 				9191A561253C09D000B30ACF /* ExtensionDelegate.swift in Sources */,
 				9191A55F253C09D000B30ACF /* InterfaceController.swift in Sources */,
