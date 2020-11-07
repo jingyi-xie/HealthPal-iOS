@@ -60,7 +60,7 @@ class SummaryController: UIViewController, WCSessionDelegate {
                 self.newController.createNewHandwashing()
             }
         }
-        else if message["type"] as! String == "wash" {
+        else if message["type"] as! String == "weight" {
         
         }
     }

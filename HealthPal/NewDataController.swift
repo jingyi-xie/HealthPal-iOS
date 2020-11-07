@@ -89,11 +89,7 @@ class NewDataController: UIViewController, UITextFieldDelegate, UIPickerViewDele
                 self.showAlert(title: "Warning", message: "Please provide a valid value and unit")
                 return
             }
-            let newWeightData = WeightData(context: context)
-            newWeightData.value = Int64(self.ValueInput.text!)!
-            newWeightData.unit = self.UnitInput.text
-            newWeightData.date = Date()
-            saveWeightToHealth()
+            createNewWeight(value: Int64(self.ValueInput.text!)!, unit: self.UnitInput.text!)
         }
         // hand washing
         else {
@@ -133,6 +129,14 @@ class NewDataController: UIViewController, UITextFieldDelegate, UIPickerViewDele
             let toWrite: Set<HKSampleType> = [HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass)!, HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.handwashingEvent)!]
             healthKitStore.requestAuthorization(toShare: toWrite, read: toRead){(success, error) -> Void in print("Authorization success")}
         }
+    }
+    
+    func createNewWeight(value: Int64, unit: String) {
+        let newWeightData = WeightData(context: context)
+        newWeightData.value = value
+        newWeightData.unit = unit
+        newWeightData.date = Date()
+        saveWeightToHealth()
     }
     
     func saveWeightToHealth() {
