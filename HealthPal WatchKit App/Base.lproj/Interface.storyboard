@@ -9,7 +9,7 @@
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="HealthPal_WatchKit_App" customModuleProvider="target">
+                <controller fullBounds="YES" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="HealthPal_WatchKit_App" customModuleProvider="target">
                     <items>
                         <imageView width="100" height="100" alignment="center" image="home" id="YvB-OO-33m"/>
                         <separator width="98" alignment="center" id="cA4-lD-qvi">
@@ -63,22 +63,33 @@
         <!--Weight Controller-->
         <scene sceneID="dIA-hY-v0j">
             <objects>
-                <controller id="BKR-Oh-8u7" customClass="WeightController" customModule="HealthPal_WatchKit_Extension">
+                <controller fullBounds="YES" id="BKR-Oh-8u7" customClass="WeightController" customModule="HealthPal_WatchKit_Extension">
                     <items>
                         <group width="1" alignment="left" id="085-uu-qOt">
                             <items>
-                                <imageView width="80" height="80" alignment="center" image="scale" id="HHl-Xp-aeG"/>
+                                <imageView width="63" height="63" alignment="center" image="scale" id="HHl-Xp-aeG"/>
                             </items>
                         </group>
-                        <label alignment="center" text="Number" id="DUw-z8-mZf"/>
-                        <slider width="1" alignment="left" value="1" maximum="3" steps="3" id="5Xh-lt-yLm"/>
+                        <label width="136" alignment="center" text="Rotate the Crown!" textAlignment="center" id="Zi0-35-ycu">
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" type="italicSystem" weight="bold" pointSize="15"/>
+                        </label>
+                        <label width="136" height="0.25" alignment="center" text="Number" textAlignment="center" id="DUw-z8-mZf">
+                            <fontDescription key="font" type="system" pointSize="20"/>
+                        </label>
                         <button width="0.5" height="32" alignment="center" title="Add" id="uco-dd-V5N">
                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="clickAddBtn" destination="BKR-Oh-8u7" id="vJM-7x-UiJ"/>
+                            </connections>
                         </button>
                     </items>
+                    <connections>
+                        <outlet property="numLabel" destination="DUw-z8-mZf" id="b2O-lx-Deh"/>
+                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="461" y="-227"/>
+            <point key="canvasLocation" x="460.47826086956519" y="-227.67857142857144"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="Niz-AI-uX2">
@@ -90,7 +101,7 @@
         <!--Wash Controller-->
         <scene sceneID="vNq-BO-cwj">
             <objects>
-                <controller id="nkm-9V-8qI" customClass="WashController" customModule="HealthPal_WatchKit_Extension">
+                <controller fullBounds="YES" id="nkm-9V-8qI" customClass="WashController" customModule="HealthPal_WatchKit_Extension">
                     <items>
                         <timer width="1" height="0.34999999999999998" alignment="center" textAlignment="center" enabled="YES" format="short" previewedSeconds="20" id="dNI-qE-8r0">
                             <fontDescription key="font" type="system" pointSize="28"/>

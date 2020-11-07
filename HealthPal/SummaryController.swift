@@ -61,7 +61,10 @@ class SummaryController: UIViewController, WCSessionDelegate {
             }
         }
         else if message["type"] as! String == "weight" {
-        
+            let value = message["value"] as! Int64
+            DispatchQueue.main.async {
+                self.newController.createNewWeight(value: value, unit: "lbs")
+            }
         }
     }
     

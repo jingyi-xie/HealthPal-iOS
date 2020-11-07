@@ -31,7 +31,6 @@ class WashController: WKInterfaceController, WCSessionDelegate {
             self.session.delegate = self
             self.session.activate()
         }
-        
     }
 
     override func didDeactivate() {
@@ -43,7 +42,7 @@ class WashController: WKInterfaceController, WCSessionDelegate {
         // send message to phone app
         if WCSession.isSupported() {
             session.sendMessage(["type": "wash"], replyHandler: nil, errorHandler: nil)
-            print("sent to phone")
+            print("sent washing data to phone")
         }
         self.pop()
     }

@@ -136,22 +136,21 @@ class NewDataController: UIViewController, UITextFieldDelegate, UIPickerViewDele
         newWeightData.value = value
         newWeightData.unit = unit
         newWeightData.date = Date()
-        saveWeightToHealth()
+        saveWeightToHealth(value: value, unitStr: unit)
     }
     
-    func saveWeightToHealth() {
+    func saveWeightToHealth(value: Int64, unitStr: String) {
         if !HKHealthStore.isHealthDataAvailable() {
             print("health data not available on the device")
             return
         }
-        let weight = UnitInput.text == "lbs" ? Double(ValueInput.text!)! : Double(ValueInput.text!)! * 2.2
+        let weight = unitStr == "lbs" ? Double(value) : Double(value) * 2.2
         let today = Date()
         if let type = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass) {
             let quantity = HKQuantity(unit: HKUnit.pound(), doubleValue: weight)
             let data = HKQuantitySample(type: type, quantity: quantity, start: today, end: today)
             healthKitStore.save(data) {(success, error) -> Void in
                 print("Saved new weight data")
-                
             }
         }
     }
