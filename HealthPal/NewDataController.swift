@@ -97,30 +97,7 @@ class NewDataController: UIViewController, UITextFieldDelegate, UIPickerViewDele
         }
         // hand washing
         else {
-            var washData: [HandWashData] = []
-            var targetData: HandWashData? = nil
-            do {
-                washData = try context.fetch(HandWashData.fetchRequest())
-            }
-            catch {
-                print("Failed to fetch handwashing data")
-            }
-            let calendar = Calendar.current
-            for data in washData {
-                if calendar.isDateInToday(data.date!) {
-                    targetData = data
-                    break
-                }
-            }
-            if targetData != nil {
-                targetData?.times += 1
-            }
-            else {
-                let newHandWashData = HandWashData(context: context)
-                newHandWashData.times = 1
-                newHandWashData.date = Date()
-            }
-            saveHandwashingToHealth()
+            createNewHandwashing()
         }
         do {
             try self.context.save()
@@ -173,6 +150,33 @@ class NewDataController: UIViewController, UITextFieldDelegate, UIPickerViewDele
                 
             }
         }
+    }
+    
+    func createNewHandwashing() {
+        var washData: [HandWashData] = []
+        var targetData: HandWashData? = nil
+        do {
+            washData = try context.fetch(HandWashData.fetchRequest())
+        }
+        catch {
+            print("Failed to fetch handwashing data")
+        }
+        let calendar = Calendar.current
+        for data in washData {
+            if calendar.isDateInToday(data.date!) {
+                targetData = data
+                break
+            }
+        }
+        if targetData != nil {
+            targetData?.times += 1
+        }
+        else {
+            let newHandWashData = HandWashData(context: context)
+            newHandWashData.times = 1
+            newHandWashData.date = Date()
+        }
+        saveHandwashingToHealth()
     }
     
     func saveHandwashingToHealth() {

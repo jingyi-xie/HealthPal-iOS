@@ -11,6 +11,7 @@ import WatchConnectivity
 class SummaryController: UIViewController, WCSessionDelegate {
 
     var session: WCSession!
+    let newController = NewDataController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +56,12 @@ class SummaryController: UIViewController, WCSessionDelegate {
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         print("received a message on phone")
         if message["type"] as! String == "wash" {
-            print("I washed!!!")
+            DispatchQueue.main.async {
+                self.newController.createNewHandwashing()
+            }
+        }
+        else if message["type"] as! String == "wash" {
+        
         }
     }
     
