@@ -114,7 +114,7 @@ class DetailController: UIViewController, ChartViewDelegate {
         chartView.legend.form = .line
         chartView.animate(xAxisDuration: 0.5)
         
-        chartView.frame = CGRect(x: 0, y: 75, width: self.view.frame.size.width, height: 200)
+        chartView.frame = CGRect(x: 0, y: 100, width: self.view.frame.size.width, height: 200)
         chartView.center.x = self.view.center.x
         view.addSubview(chartView)
         var graphEntries = [ChartDataEntry]()
@@ -146,7 +146,7 @@ class DetailController: UIViewController, ChartViewDelegate {
         let data = LineChartData(dataSet: set1)
         chartView.data = data
         if self.graphValues.count == 0 {
-            let label = UILabel(frame: CGRect(x: 200, y: 160, width: 200, height: 20))
+            let label = UILabel(frame: CGRect(x: 200, y: 175, width: 200, height: 20))
             label.center.x = self.view.center.x
             label.textAlignment = .center
             label.text = "No data found"
