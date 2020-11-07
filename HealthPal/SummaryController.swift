@@ -6,13 +6,21 @@
 //
 
 import UIKit
+import WatchConnectivity
 
-class SummaryController: UIViewController {
+class SummaryController: UIViewController, WCSessionDelegate {
+
+    var session: WCSession!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if WCSession.isSupported() {
+            self.session = WCSession.default
+            self.session.delegate = self
+            self.session.activate()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,5 +51,26 @@ class SummaryController: UIViewController {
     @IBAction func backFromNewData(_ segue: UIStoryboardSegue) {
         self.tabBarController?.selectedIndex = 0
     }
+    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        print("received a message on phone")
+        if message["type"] as! String == "wash" {
+            print("I washed!!!")
+        }
+    }
+    
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        print("activation completed")
+    }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        
+    }
+        
+
 
 }
