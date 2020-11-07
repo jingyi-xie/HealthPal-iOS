@@ -17,6 +17,7 @@ class NewDataController: UIViewController, UITextFieldDelegate, UIPickerViewDele
     @IBOutlet weak var ValueLabel: UILabel!
     @IBOutlet weak var UnitLabel: UILabel!
     
+    
     // context for core data
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     

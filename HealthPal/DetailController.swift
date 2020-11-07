@@ -13,6 +13,7 @@ class DetailController: UIViewController, ChartViewDelegate {
 
     @IBOutlet weak var unitSegControl: UISegmentedControl!
     @IBOutlet weak var dataTable: UITableView!
+    @IBOutlet weak var locationBtn: UIBarButtonItem!
     
     var chartView = LineChartView()
     var weightData = [WeightData]()
@@ -35,6 +36,9 @@ class DetailController: UIViewController, ChartViewDelegate {
         dataTable.delegate = self
         dataTable.dataSource = self
         chartView.setExtraOffsets(left: 20, top: 5, right: 20, bottom: 5)
+        if type == "weight" {
+            self.navigationItem.rightBarButtonItem = nil;
+        }
     }
     
     func fetchData() {

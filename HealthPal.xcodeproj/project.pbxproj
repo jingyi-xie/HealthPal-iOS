@@ -10,6 +10,9 @@
 		071ECD056B40C4E18C712E61 /* Pods_HealthPal_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83C2D9F452DBED1B7742D88D /* Pods_HealthPal_WatchKit_Extension.framework */; };
 		916539412555B19700E8FFD4 /* WeightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916539402555B19700E8FFD4 /* WeightController.swift */; };
 		916539462555B54D00E8FFD4 /* WashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916539452555B54D00E8FFD4 /* WashController.swift */; };
+		9165396325567C8800E8FFD4 /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9165396225567C8700E8FFD4 /* LocationController.swift */; };
+		916539762556858C00E8FFD4 /* LocationData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916539742556858C00E8FFD4 /* LocationData+CoreDataClass.swift */; };
+		916539772556858C00E8FFD4 /* LocationData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916539752556858C00E8FFD4 /* LocationData+CoreDataProperties.swift */; };
 		918A64E32547FB5600B38FAA /* AllDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918A64E22547FB5600B38FAA /* AllDataController.swift */; };
 		9191A53A253C09CE00B30ACF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191A539253C09CE00B30ACF /* AppDelegate.swift */; };
 		9191A53C253C09CE00B30ACF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191A53B253C09CE00B30ACF /* SceneDelegate.swift */; };
@@ -89,6 +92,9 @@
 		83C2D9F452DBED1B7742D88D /* Pods_HealthPal_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthPal_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		916539402555B19700E8FFD4 /* WeightController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightController.swift; sourceTree = "<group>"; };
 		916539452555B54D00E8FFD4 /* WashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashController.swift; sourceTree = "<group>"; };
+		9165396225567C8700E8FFD4 /* LocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
+		916539742556858C00E8FFD4 /* LocationData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		916539752556858C00E8FFD4 /* LocationData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		918A64E22547FB5600B38FAA /* AllDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDataController.swift; sourceTree = "<group>"; };
 		9191A536253C09CE00B30ACF /* HealthPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9191A539253C09CE00B30ACF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -205,6 +211,7 @@
 				91DBBF5F25492CA000A744E3 /* SummaryController.swift */,
 				91F0CE522549D55700825D12 /* DetailController.swift */,
 				91C13711254A1A65006B40E4 /* DataTableCell.swift */,
+				9165396225567C8700E8FFD4 /* LocationController.swift */,
 			);
 			path = HealthPal;
 			sourceTree = "<group>";
@@ -238,6 +245,8 @@
 		91DBBF562549180F00A744E3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				916539742556858C00E8FFD4 /* LocationData+CoreDataClass.swift */,
+				916539752556858C00E8FFD4 /* LocationData+CoreDataProperties.swift */,
 				91C136FC2549F9B7006B40E4 /* HandWashData+CoreDataClass.swift */,
 				91C136FD2549F9B7006B40E4 /* HandWashData+CoreDataProperties.swift */,
 				91C136FE2549F9B7006B40E4 /* WeightData+CoreDataClass.swift */,
@@ -481,6 +490,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				916539762556858C00E8FFD4 /* LocationData+CoreDataClass.swift in Sources */,
+				916539772556858C00E8FFD4 /* LocationData+CoreDataProperties.swift in Sources */,
 				9191A53A253C09CE00B30ACF /* AppDelegate.swift in Sources */,
 				91C137022549F9B7006B40E4 /* WeightData+CoreDataClass.swift in Sources */,
 				91DBBF5B254918BC00A744E3 /* NewDataController.swift in Sources */,
@@ -490,6 +501,7 @@
 				91C137012549F9B7006B40E4 /* HandWashData+CoreDataProperties.swift in Sources */,
 				91DBBF4725490E2400A744E3 /* HealthPal.xcdatamodeld in Sources */,
 				918A64E32547FB5600B38FAA /* AllDataController.swift in Sources */,
+				9165396325567C8800E8FFD4 /* LocationController.swift in Sources */,
 				91C137002549F9B7006B40E4 /* HandWashData+CoreDataClass.swift in Sources */,
 				91C137032549F9B7006B40E4 /* WeightData+CoreDataProperties.swift in Sources */,
 				9191A53C253C09CE00B30ACF /* SceneDelegate.swift in Sources */,

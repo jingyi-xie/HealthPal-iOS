@@ -177,15 +177,89 @@
                             <constraint firstItem="iJl-VQ-ewB" firstAttribute="trailing" secondItem="Wle-Gi-yw3" secondAttribute="trailing" id="zZW-BH-y06"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="QPa-tL-fzw"/>
+                    <navigationItem key="navigationItem" id="QPa-tL-fzw">
+                        <barButtonItem key="rightBarButtonItem" title="Locations" id="vnf-t9-8Ev">
+                            <connections>
+                                <segue destination="47Z-7X-36T" kind="show" id="gtM-dF-kNg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dataTable" destination="iJl-VQ-ewB" id="3Cq-A2-bCi"/>
+                        <outlet property="locationBtn" destination="vnf-t9-8Ev" id="blo-Iu-jhP"/>
                         <outlet property="unitSegControl" destination="Wle-Gi-yw3" id="snv-2z-Qzg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lle-lN-nom" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="760" y="2220.1421800947865"/>
+        </scene>
+        <!--My Locations-->
+        <scene sceneID="yrr-UK-lND">
+            <objects>
+                <viewController id="47Z-7X-36T" customClass="LocationController" customModule="HealthPal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jG7-Mc-Qws">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FQn-rB-GaC">
+                                <rect key="frame" x="16" y="105" width="358" height="222"/>
+                            </mapView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qVm-qf-GNa">
+                                <rect key="frame" x="16" y="392" width="358" height="348"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="locationCell" id="Mv4-6f-n1c">
+                                        <rect key="frame" x="0.0" y="28" width="358" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mv4-6f-n1c" id="IyN-ys-9zq">
+                                            <rect key="frame" x="0.0" y="0.0" width="358" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Identifier" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HGU-yG-Kly">
+                                <rect key="frame" x="16" y="343" width="198" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZrO-vM-J16">
+                                <rect key="frame" x="228" y="345" width="146" height="30"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                <state key="normal" title="Add Current Location"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="AnS-3j-W0s"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HGU-yG-Kly" firstAttribute="leading" secondItem="AnS-3j-W0s" secondAttribute="leading" constant="16" id="0Mg-zP-Nrb"/>
+                            <constraint firstItem="AnS-3j-W0s" firstAttribute="trailing" secondItem="FQn-rB-GaC" secondAttribute="trailing" constant="16" id="CJM-2C-fYD"/>
+                            <constraint firstItem="FQn-rB-GaC" firstAttribute="leading" secondItem="AnS-3j-W0s" secondAttribute="leading" constant="16" id="Ek3-12-zgX"/>
+                            <constraint firstItem="ZrO-vM-J16" firstAttribute="leading" secondItem="HGU-yG-Kly" secondAttribute="trailing" constant="14" id="W4z-5p-gF6"/>
+                            <constraint firstItem="AnS-3j-W0s" firstAttribute="trailing" secondItem="ZrO-vM-J16" secondAttribute="trailing" constant="16" id="XZ1-mn-8lG"/>
+                            <constraint firstItem="qVm-qf-GNa" firstAttribute="top" secondItem="AnS-3j-W0s" secondAttribute="top" constant="304" id="Z87-hX-WxG"/>
+                            <constraint firstItem="FQn-rB-GaC" firstAttribute="top" secondItem="AnS-3j-W0s" secondAttribute="top" constant="17" id="acl-1p-nkc"/>
+                            <constraint firstItem="ZrO-vM-J16" firstAttribute="top" secondItem="AnS-3j-W0s" secondAttribute="top" constant="257" id="af5-hp-QNV"/>
+                            <constraint firstItem="qVm-qf-GNa" firstAttribute="leading" secondItem="AnS-3j-W0s" secondAttribute="leading" constant="16" id="ea0-1q-P2Y"/>
+                            <constraint firstItem="ZrO-vM-J16" firstAttribute="leading" secondItem="AnS-3j-W0s" secondAttribute="leading" constant="228" id="fUG-SD-Fyy"/>
+                            <constraint firstItem="AnS-3j-W0s" firstAttribute="bottom" secondItem="qVm-qf-GNa" secondAttribute="bottom" constant="21" id="fza-Ni-fwl"/>
+                            <constraint firstItem="HGU-yG-Kly" firstAttribute="top" secondItem="AnS-3j-W0s" secondAttribute="top" constant="255" id="lp7-v2-YpC"/>
+                            <constraint firstItem="AnS-3j-W0s" firstAttribute="trailing" secondItem="qVm-qf-GNa" secondAttribute="trailing" constant="16" id="prq-vf-qkt"/>
+                            <constraint firstItem="AnS-3j-W0s" firstAttribute="bottom" secondItem="FQn-rB-GaC" secondAttribute="bottom" constant="434" id="yC1-WH-Mb3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="My Locations" id="bCz-8s-JYf"/>
+                    <connections>
+                        <outlet property="addBtn" destination="ZrO-vM-J16" id="c72-qw-bPP"/>
+                        <outlet property="idInput" destination="HGU-yG-Kly" id="abK-nx-pEU"/>
+                        <outlet property="locationTable" destination="qVm-qf-GNa" id="oHF-ju-oaK"/>
+                        <outlet property="mapView" destination="FQn-rB-GaC" id="1bT-y8-uhN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lpa-kB-1At" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2040" y="2218.7203791469192"/>
         </scene>
         <!--All Data Controller-->
         <scene sceneID="Q2O-BS-YbI">
