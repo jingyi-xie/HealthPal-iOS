@@ -9,7 +9,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class LocationController: UIViewController, MKMapViewDelegate {
+class LocationController: UIViewController, MKMapViewDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var idInput: UITextField!
@@ -25,6 +25,22 @@ class LocationController: UIViewController, MKMapViewDelegate {
         mapView.delegate = self
         checkLocationService()
         
+        idInput.delegate = self
+        
+        // tap gesture to dismiss the keyboard
+        let Tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(Tap);
+    }
+    
+    // when click anywhere outside of the keyboard, dismiss the keyboard
+    @objc func dismissKeyboard() {
+        self.view.endEditing(true)
+    }
+    
+    // when click "return" on the keyboard, dismiss the keyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     func checkLocationService() {
@@ -34,7 +50,11 @@ class LocationController: UIViewController, MKMapViewDelegate {
             checkPermission()
         }
         else {
-            
+            let alert = UIAlertController(title: "Warning", message: "Location Services is disabled!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action) in
+                alert.dismiss(animated: true, completion: nil)
+            }))
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
@@ -43,13 +63,13 @@ class LocationController: UIViewController, MKMapViewDelegate {
         case .authorizedWhenInUse:
             mapView.showsUserLocation = true
             if let location = locationManager.location?.coordinate {
-                let region = MKCoordinateRegion.init(center: location, latitudinalMeters: 100, longitudinalMeters: 100)
+                let region = MKCoordinateRegion.init(center: location, latitudinalMeters: 50, longitudinalMeters: 50)
                 mapView.setRegion(region, animated: true)
             }
             locationManager.startUpdatingLocation()
             break
         case .denied:
-            let alert = UIAlertController(title: "Warning", message: "Location Services is denied!", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Warning", message: "Location Permission is denied!", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action) in
                 alert.dismiss(animated: true, completion: nil)
             }))
@@ -75,7 +95,7 @@ extension LocationController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        let region = MKCoordinateRegion.init(center: center, latitudinalMeters: 100, longitudinalMeters: 100)
+        let region = MKCoordinateRegion.init(center: center, latitudinalMeters: 50, longitudinalMeters: 50)
         mapView.setRegion(region, animated: true)
     }
     
