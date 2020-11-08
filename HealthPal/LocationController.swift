@@ -8,6 +8,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import CoreData
 
 class LocationController: UIViewController, MKMapViewDelegate, UITextFieldDelegate {
 
@@ -17,6 +18,11 @@ class LocationController: UIViewController, MKMapViewDelegate, UITextFieldDelega
     @IBOutlet weak var locationTable: UITableView!
     
     let locationManager = CLLocationManager()
+    var savedLocations = [LocationData]()
+    
+    // context for core data
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +36,11 @@ class LocationController: UIViewController, MKMapViewDelegate, UITextFieldDelega
         // tap gesture to dismiss the keyboard
         let Tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(Tap);
+        
+        // location table
+        locationTable.delegate = self
+        locationTable.dataSource = self
+        updateTable()
     }
     
     // when click anywhere outside of the keyboard, dismiss the keyboard
@@ -50,11 +61,7 @@ class LocationController: UIViewController, MKMapViewDelegate, UITextFieldDelega
             checkPermission()
         }
         else {
-            let alert = UIAlertController(title: "Warning", message: "Location Services is disabled!", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action) in
-                alert.dismiss(animated: true, completion: nil)
-            }))
-            self.present(alert, animated: true, completion: nil)
+            showAlert(title: "Warning", message: "Location Services is disabled!")
         }
     }
     
@@ -69,11 +76,7 @@ class LocationController: UIViewController, MKMapViewDelegate, UITextFieldDelega
             locationManager.startUpdatingLocation()
             break
         case .denied:
-            let alert = UIAlertController(title: "Warning", message: "Location Permission is denied!", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action) in
-                alert.dismiss(animated: true, completion: nil)
-            }))
-            self.present(alert, animated: true, completion: nil)
+            showAlert(title: "Warning", message: "Location Permission is denied!")
             break
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
@@ -87,8 +90,45 @@ class LocationController: UIViewController, MKMapViewDelegate, UITextFieldDelega
         }
     }
     
-     
-
+    func updateTable() {
+        do {
+            self.savedLocations = try context.fetch(LocationData.fetchRequest())
+        }
+        catch {
+            print("Failed to fetch core data")
+        }
+        self.locationTable.reloadData()
+    }
+    
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func clickAddBtn(_ sender: Any) {
+        if self.locationManager.location == nil { return }
+        if self.idInput.text == "" {
+            showAlert(title: "Error", message: "Please provide a name for current location!")
+            return
+        }
+        let newLocationData = LocationData(context: context)
+        newLocationData.name = self.idInput.text!
+        newLocationData.latitude = self.locationManager.location!.coordinate.latitude
+        newLocationData.longitude = self.locationManager.location!.coordinate.longitude
+        do {
+            try self.context.save()
+            self.idInput.text = ""
+            self.showAlert(title: "Success", message: "New Location Added!")
+            updateTable()
+        }
+        catch {
+            self.showAlert(title: "Error", message: "Failed to save data!")
+            self.idInput.text = ""
+        }
+    }
 }
 
 extension LocationController: CLLocationManagerDelegate {
@@ -101,5 +141,23 @@ extension LocationController: CLLocationManagerDelegate {
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         checkPermission()
+    }
+}
+
+extension LocationController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // for remove
+    }
+}
+
+extension LocationController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return savedLocations.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = locationTable.dequeueReusableCell(withIdentifier: "locationCell", for: indexPath) as! LocationTableCell
+        cell.nameLabel.text = savedLocations[indexPath.row].name
+        return cell
     }
 }

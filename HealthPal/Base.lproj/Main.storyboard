@@ -209,13 +209,41 @@
                                 <rect key="frame" x="16" y="392" width="358" height="348"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="locationCell" id="Mv4-6f-n1c">
-                                        <rect key="frame" x="0.0" y="28" width="358" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="locationCell" id="Mv4-6f-n1c" customClass="LocationTableCell" customModule="HealthPal" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="358" height="42.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mv4-6f-n1c" id="IyN-ys-9zq">
-                                            <rect key="frame" x="0.0" y="0.0" width="358" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="358" height="42.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location.fill.viewfinder" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="eRn-JV-HeU">
+                                                    <rect key="frame" x="12" y="8.3333333333333339" width="26" height="24.333333333333329"/>
+                                                    <color key="tintColor" systemColor="systemTealColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="26" id="Nh7-Xr-mW7"/>
+                                                        <constraint firstAttribute="width" constant="26" id="VJe-12-6Ih"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4L5-ca-to1">
+                                                    <rect key="frame" x="53" y="11.000000000000002" width="305" height="19.666666666666671"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="eRn-JV-HeU" firstAttribute="top" secondItem="IyN-ys-9zq" secondAttribute="top" constant="7" id="5LD-FA-xZV"/>
+                                                <constraint firstItem="4L5-ca-to1" firstAttribute="top" secondItem="IyN-ys-9zq" secondAttribute="top" constant="11" id="6qa-3s-cWS"/>
+                                                <constraint firstItem="eRn-JV-HeU" firstAttribute="leading" secondItem="IyN-ys-9zq" secondAttribute="leading" constant="12" id="XcY-94-dA8"/>
+                                                <constraint firstItem="4L5-ca-to1" firstAttribute="leading" secondItem="eRn-JV-HeU" secondAttribute="trailing" constant="15" id="YdZ-LY-cBY"/>
+                                                <constraint firstAttribute="trailing" secondItem="4L5-ca-to1" secondAttribute="trailing" id="ihq-R6-ktN"/>
+                                                <constraint firstAttribute="bottom" secondItem="eRn-JV-HeU" secondAttribute="bottom" constant="9" id="rjq-C4-AqG"/>
+                                                <constraint firstAttribute="bottom" secondItem="4L5-ca-to1" secondAttribute="bottom" constant="11.67" id="vvU-mW-9ZA"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="4L5-ca-to1" id="xtA-vu-B8O"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -228,6 +256,9 @@
                                 <rect key="frame" x="228" y="345" width="146" height="30"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                 <state key="normal" title="Add Current Location"/>
+                                <connections>
+                                    <action selector="clickAddBtn:" destination="47Z-7X-36T" eventType="touchUpInside" id="bby-qR-LWu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AnS-3j-W0s"/>
@@ -508,6 +539,7 @@
         <image name="health_app" width="450" height="150"/>
         <image name="heart.text.square" catalog="system" width="128" height="114"/>
         <image name="heart.text.square.fill" catalog="system" width="128" height="114"/>
+        <image name="location.fill.viewfinder" catalog="system" width="128" height="115"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <image name="submit" width="251" height="51"/>
@@ -525,6 +557,9 @@
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

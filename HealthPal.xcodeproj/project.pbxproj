@@ -13,6 +13,7 @@
 		9165396325567C8800E8FFD4 /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9165396225567C8700E8FFD4 /* LocationController.swift */; };
 		91653986255686C300E8FFD4 /* LocationData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91653984255686C300E8FFD4 /* LocationData+CoreDataClass.swift */; };
 		91653987255686C300E8FFD4 /* LocationData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91653985255686C300E8FFD4 /* LocationData+CoreDataProperties.swift */; };
+		9165398F25576CCD00E8FFD4 /* LocationTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9165398E25576CCD00E8FFD4 /* LocationTableCell.swift */; };
 		918A64E32547FB5600B38FAA /* AllDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918A64E22547FB5600B38FAA /* AllDataController.swift */; };
 		9191A53A253C09CE00B30ACF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191A539253C09CE00B30ACF /* AppDelegate.swift */; };
 		9191A53C253C09CE00B30ACF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191A53B253C09CE00B30ACF /* SceneDelegate.swift */; };
@@ -95,6 +96,7 @@
 		9165396225567C8700E8FFD4 /* LocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
 		91653984255686C300E8FFD4 /* LocationData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		91653985255686C300E8FFD4 /* LocationData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9165398E25576CCD00E8FFD4 /* LocationTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableCell.swift; sourceTree = "<group>"; };
 		918A64E22547FB5600B38FAA /* AllDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDataController.swift; sourceTree = "<group>"; };
 		9191A536253C09CE00B30ACF /* HealthPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9191A539253C09CE00B30ACF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				91F0CE522549D55700825D12 /* DetailController.swift */,
 				91C13711254A1A65006B40E4 /* DataTableCell.swift */,
 				9165396225567C8700E8FFD4 /* LocationController.swift */,
+				9165398E25576CCD00E8FFD4 /* LocationTableCell.swift */,
 			);
 			path = HealthPal;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				91653986255686C300E8FFD4 /* LocationData+CoreDataClass.swift in Sources */,
 				91653987255686C300E8FFD4 /* LocationData+CoreDataProperties.swift in Sources */,
 				9191A53A253C09CE00B30ACF /* AppDelegate.swift in Sources */,
+				9165398F25576CCD00E8FFD4 /* LocationTableCell.swift in Sources */,
 				91C137022549F9B7006B40E4 /* WeightData+CoreDataClass.swift in Sources */,
 				91DBBF5B254918BC00A744E3 /* NewDataController.swift in Sources */,
 				91F0CE532549D55700825D12 /* DetailController.swift in Sources */,
