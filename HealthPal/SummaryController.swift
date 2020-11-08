@@ -7,11 +7,14 @@
 
 import UIKit
 import WatchConnectivity
+import UserNotifications
+
 
 class SummaryController: UIViewController, WCSessionDelegate {
 
     var session: WCSession!
     let newController = NewDataController()
+    let center = UNUserNotificationCenter.current()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +25,11 @@ class SummaryController: UIViewController, WCSessionDelegate {
             self.session.delegate = self
             self.session.activate()
         }
+        
+        // Ask for notification permission
+        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+        }
+        configureWeightNotification()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,13 +81,29 @@ class SummaryController: UIViewController, WCSessionDelegate {
     }
     
     func sessionDidBecomeInactive(_ session: WCSession) {
-        
     }
     
     func sessionDidDeactivate(_ session: WCSession) {
-        
     }
+    
+    func configureWeightNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "Time to weight!"
+        content.body = "Click to add new data."
         
-
+        var dateComponents = DateComponents()
+        dateComponents.calendar = Calendar.current
+        // get notification at 11am
+        dateComponents.hour = 11
+        dateComponents.minute = 0
+        dateComponents.second = 0
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        let uuidString = UUID().uuidString
+        let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
+        center.add(request) { (error) in
+            print("failed to request weight notification")
+        }
+    }
 
 }
