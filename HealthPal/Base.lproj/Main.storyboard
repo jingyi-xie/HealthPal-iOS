@@ -54,10 +54,23 @@
                                 <color key="textColor" systemColor="systemIndigoColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average weight: xxx lbs (xxx kg)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahM-DD-Na4">
+                                <rect key="frame" x="58" y="376" width="298" height="39"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average: xxx time(s)/day" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUJ-cZ-qX7">
+                                <rect key="frame" x="66" y="624" width="283" height="21"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ahM-DD-Na4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="58" id="0U5-dj-7cK"/>
                             <constraint firstItem="D79-Ba-wqF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="189.66999999999999" id="3UD-nx-vY1"/>
                             <constraint firstItem="ULI-GW-3Tc" firstAttribute="top" secondItem="mxs-Ki-fFg" secondAttribute="bottom" constant="78" id="53I-Pk-QId"/>
                             <constraint firstItem="ULI-GW-3Tc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="5oS-P8-VG4"/>
@@ -66,19 +79,30 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fZT-ng-sjH" secondAttribute="trailing" constant="16" id="BNX-IO-Hxa"/>
                             <constraint firstItem="mxs-Ki-fFg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="111" id="EPs-Wx-dMw"/>
                             <constraint firstItem="gZz-5R-cMg" firstAttribute="top" secondItem="mxs-Ki-fFg" secondAttribute="bottom" constant="355" id="EXS-VA-q1n"/>
+                            <constraint firstItem="tUJ-cZ-qX7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="66" id="Is1-O6-Lzc"/>
                             <constraint firstItem="gZz-5R-cMg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="159" id="Iyy-dF-Egw"/>
+                            <constraint firstItem="tUJ-cZ-qX7" firstAttribute="top" secondItem="mxs-Ki-fFg" secondAttribute="bottom" constant="433" id="KhR-C4-qFF"/>
                             <constraint firstItem="fZT-ng-sjH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="KmA-RG-jfB"/>
                             <constraint firstItem="D79-Ba-wqF" firstAttribute="top" secondItem="mxs-Ki-fFg" secondAttribute="bottom" constant="115" id="ZqC-Cp-72z"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gZz-5R-cMg" secondAttribute="bottom" constant="191" id="bnS-E1-116"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tUJ-cZ-qX7" secondAttribute="bottom" constant="116" id="cc7-b2-y2z"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ULI-GW-3Tc" secondAttribute="bottom" constant="305" id="cwa-8o-PwF"/>
                             <constraint firstItem="fZT-ng-sjH" firstAttribute="top" secondItem="ULI-GW-3Tc" secondAttribute="bottom" constant="54" id="gVp-gF-l9f"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="D79-Ba-wqF" secondAttribute="trailing" constant="133.66999999999999" id="hem-Pj-GJR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tUJ-cZ-qX7" secondAttribute="trailing" constant="41" id="kLz-kY-iTF"/>
+                            <constraint firstItem="ahM-DD-Na4" firstAttribute="top" secondItem="mxs-Ki-fFg" secondAttribute="bottom" constant="185" id="r64-m4-x75"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fZT-ng-sjH" secondAttribute="bottom" constant="64" id="tXa-GO-Rxa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ULI-GW-3Tc" secondAttribute="trailing" constant="16" id="teb-1A-CbK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ahM-DD-Na4" secondAttribute="trailing" constant="34" id="vzn-ul-vB3"/>
+                            <constraint firstItem="fZT-ng-sjH" firstAttribute="top" secondItem="ahM-DD-Na4" secondAttribute="bottom" constant="95" id="wLZ-bz-afd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gZz-5R-cMg" secondAttribute="trailing" constant="101.33" id="xhl-Sh-4fh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cyH-mD-o8C"/>
+                    <connections>
+                        <outlet property="washSummary" destination="tUJ-cZ-qX7" id="oq6-49-Jdd"/>
+                        <outlet property="weightSummary" destination="ahM-DD-Na4" id="Nq9-lB-LU7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -530,7 +554,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gsK-uY-TYx"/>
+        <segue reference="hKl-wM-Vj1"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="archivebox" catalog="system" width="128" height="106"/>

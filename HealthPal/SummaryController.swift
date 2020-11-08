@@ -8,13 +8,24 @@
 import UIKit
 import WatchConnectivity
 import UserNotifications
+import CoreData
 
 
 class SummaryController: UIViewController, WCSessionDelegate {
 
+    
+    @IBOutlet weak var weightSummary: UILabel!
+    @IBOutlet weak var washSummary: UILabel!
+    
     var session: WCSession!
     let newController = NewDataController()
     let center = UNUserNotificationCenter.current()
+    
+    // context for core data
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    var weightData = [WeightData]()
+    var washData = [HandWashData]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +36,8 @@ class SummaryController: UIViewController, WCSessionDelegate {
             self.session.delegate = self
             self.session.activate()
         }
+        
+        configureSummaryLabels()
         
         // Ask for notification permission
         center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
@@ -59,6 +72,7 @@ class SummaryController: UIViewController, WCSessionDelegate {
 
     @IBAction func backFromNewData(_ segue: UIStoryboardSegue) {
         self.tabBarController?.selectedIndex = 0
+        configureSummaryLabels()
     }
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
@@ -103,4 +117,38 @@ class SummaryController: UIViewController, WCSessionDelegate {
         let request = UNNotificationRequest(identifier: "weight", content: content, trigger: trigger)
         center.add(request, withCompletionHandler: nil)
     }
+    
+    func configureSummaryLabels() {
+        do {
+            self.weightData = try context.fetch(WeightData.fetchRequest())
+            self.washData = try context.fetch(HandWashData.fetchRequest())
+        }
+        catch {
+            print("Failed to fetch core data")
+        }
+        
+        // weight average
+        var lbsNum: Int64 = 0;
+        var kgNum: Int64 = 0;
+        for data in self.weightData {
+            lbsNum += data.unit == "lbs" ? data.value : Int64(2.2 * Double(data.value))
+            kgNum += data.unit == "kg" ? data.value : Int64(0.45 * Double(data.value))
+        }
+        if self.weightData.count != 0 {
+            lbsNum /= Int64(self.weightData.count)
+            kgNum /= Int64(self.weightData.count)
+        }
+        self.weightSummary.text = "Average weight: \(lbsNum) lbs (\(kgNum) kg)"
+        
+        // handwashing data
+        var washNum: Int64 = 0
+        for data in self.washData {
+            washNum += data.times
+        }
+        if self.washData.count != 0 {
+            washNum /= Int64(self.washData.count)
+        }
+        self.washSummary.text = "Average: \(washNum) time(s)/day"
+    }
+
 }
