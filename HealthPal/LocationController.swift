@@ -151,7 +151,7 @@ class LocationController: UIViewController, MKMapViewDelegate, UITextFieldDelega
         region.notifyOnExit = false
         
         let trigger = UNLocationNotificationTrigger(region: region, repeats: true)
-        let request = UNNotificationRequest(identifier: "wash", content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: "wash \(identifier)", content: content, trigger: trigger)
         center.add(request, withCompletionHandler: nil)
     }
 }
