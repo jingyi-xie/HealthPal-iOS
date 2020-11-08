@@ -95,15 +95,12 @@ class SummaryController: UIViewController, WCSessionDelegate {
         var dateComponents = DateComponents()
         dateComponents.calendar = Calendar.current
         // get notification at 11am
-        dateComponents.hour = 11
-        dateComponents.minute = 0
+        dateComponents.hour = 0
+        dateComponents.minute = 53
         dateComponents.second = 0
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-        let uuidString = UUID().uuidString
-        let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
-        center.add(request) { (error) in
-            print("failed to request weight notification")
-        }
+        let request = UNNotificationRequest(identifier: "weight", content: content, trigger: trigger)
+        center.add(request, withCompletionHandler: nil)
     }
 }

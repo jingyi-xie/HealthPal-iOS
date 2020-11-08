@@ -9,6 +9,7 @@ import UIKit
 import MapKit
 import CoreLocation
 import CoreData
+import UserNotifications
 
 class LocationController: UIViewController, MKMapViewDelegate, UITextFieldDelegate {
 
@@ -19,7 +20,7 @@ class LocationController: UIViewController, MKMapViewDelegate, UITextFieldDelega
     
     let locationManager = CLLocationManager()
     var savedLocations = [LocationData]()
-    
+    let center = UNUserNotificationCenter.current()
     
     // context for core data
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -31,6 +32,10 @@ class LocationController: UIViewController, MKMapViewDelegate, UITextFieldDelega
         // Do any additional setup after loading the view.
         mapView.delegate = self
         checkLocationService()
+        
+        // request notification permission
+        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+                }
         
         idInput.delegate = self
         
@@ -122,21 +127,32 @@ class LocationController: UIViewController, MKMapViewDelegate, UITextFieldDelega
         newLocationData.name = name
         newLocationData.latitude = latitude
         newLocationData.longitude = longitude
-        configureWashNotification(latitude: latitude, longitude: longitude, identifier: name)
         do {
             try self.context.save()
             self.idInput.text = ""
+            configureWashNotification(latitude: latitude, longitude: longitude, identifier: name)
             self.showAlert(title: "Success", message: "New Location Added!")
             updateTable()
         }
         catch {
-            self.showAlert(title: "Error", message: "Failed to save data!")
+            self.showAlert(title: "Error", message: "Failed to add location!")
             self.idInput.text = ""
         }
     }
     
     func configureWashNotification(latitude: Double, longitude: Double, identifier: String) {
+        let content = UNMutableNotificationContent()
+        content.title = "Time for handwashing!"
+        content.body = "Click to start timer."
+        content.sound = .default
         
+        let region = CLCircularRegion(center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), radius: 50, identifier: identifier)
+        region.notifyOnEntry = true
+        region.notifyOnExit = false
+        
+        let trigger = UNLocationNotificationTrigger(region: region, repeats: false)
+        let request = UNNotificationRequest(identifier: "wash", content: content, trigger: trigger)
+        center.add(request, withCompletionHandler: nil)
     }
 }
 
