@@ -90,6 +90,7 @@ class SummaryController: UIViewController, WCSessionDelegate {
         let content = UNMutableNotificationContent()
         content.title = "Time to weight!"
         content.body = "Click to add new data."
+        content.sound = .default
         
         var dateComponents = DateComponents()
         dateComponents.calendar = Calendar.current
@@ -105,5 +106,4 @@ class SummaryController: UIViewController, WCSessionDelegate {
             print("failed to request weight notification")
         }
     }
-
 }

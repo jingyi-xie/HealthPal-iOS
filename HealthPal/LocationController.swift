@@ -20,6 +20,7 @@ class LocationController: UIViewController, MKMapViewDelegate, UITextFieldDelega
     let locationManager = CLLocationManager()
     var savedLocations = [LocationData]()
     
+    
     // context for core data
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
@@ -70,7 +71,7 @@ class LocationController: UIViewController, MKMapViewDelegate, UITextFieldDelega
         case .authorizedWhenInUse:
             mapView.showsUserLocation = true
             if let location = locationManager.location?.coordinate {
-                let region = MKCoordinateRegion.init(center: location, latitudinalMeters: 50, longitudinalMeters: 50)
+                let region = MKCoordinateRegion.init(center: location, latitudinalMeters: 75, longitudinalMeters: 75)
                 mapView.setRegion(region, animated: true)
             }
             locationManager.startUpdatingLocation()
@@ -115,9 +116,13 @@ class LocationController: UIViewController, MKMapViewDelegate, UITextFieldDelega
             return
         }
         let newLocationData = LocationData(context: context)
-        newLocationData.name = self.idInput.text!
-        newLocationData.latitude = self.locationManager.location!.coordinate.latitude
-        newLocationData.longitude = self.locationManager.location!.coordinate.longitude
+        let name = self.idInput.text!
+        let latitude = self.locationManager.location!.coordinate.latitude
+        let longitude = self.locationManager.location!.coordinate.longitude
+        newLocationData.name = name
+        newLocationData.latitude = latitude
+        newLocationData.longitude = longitude
+        configureWashNotification(latitude: latitude, longitude: longitude, identifier: name)
         do {
             try self.context.save()
             self.idInput.text = ""
@@ -129,13 +134,17 @@ class LocationController: UIViewController, MKMapViewDelegate, UITextFieldDelega
             self.idInput.text = ""
         }
     }
+    
+    func configureWashNotification(latitude: Double, longitude: Double, identifier: String) {
+        
+    }
 }
 
 extension LocationController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        let region = MKCoordinateRegion.init(center: center, latitudinalMeters: 50, longitudinalMeters: 50)
+        let region = MKCoordinateRegion.init(center: center, latitudinalMeters: 75, longitudinalMeters: 75)
         mapView.setRegion(region, animated: true)
     }
     
@@ -146,7 +155,6 @@ extension LocationController: CLLocationManagerDelegate {
 
 extension LocationController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // for remove
     }
 }
 

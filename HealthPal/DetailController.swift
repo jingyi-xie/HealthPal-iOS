@@ -171,7 +171,6 @@ class DetailController: UIViewController, ChartViewDelegate {
 
 extension DetailController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // for later: remove data
     }
 }
 

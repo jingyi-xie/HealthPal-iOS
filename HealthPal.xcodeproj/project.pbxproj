@@ -97,6 +97,8 @@
 		91653984255686C300E8FFD4 /* LocationData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		91653985255686C300E8FFD4 /* LocationData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9165398E25576CCD00E8FFD4 /* LocationTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableCell.swift; sourceTree = "<group>"; };
+		916539942557B3B800E8FFD4 /* Duke Chapel.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Duke Chapel.gpx"; sourceTree = "<group>"; };
+		916539982557B5A500E8FFD4 /* Hudson Hall.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Hudson Hall.gpx"; sourceTree = "<group>"; };
 		918A64E22547FB5600B38FAA /* AllDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDataController.swift; sourceTree = "<group>"; };
 		9191A536253C09CE00B30ACF /* HealthPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9191A539253C09CE00B30ACF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -215,6 +217,8 @@
 				91C13711254A1A65006B40E4 /* DataTableCell.swift */,
 				9165396225567C8700E8FFD4 /* LocationController.swift */,
 				9165398E25576CCD00E8FFD4 /* LocationTableCell.swift */,
+				916539942557B3B800E8FFD4 /* Duke Chapel.gpx */,
+				916539982557B5A500E8FFD4 /* Hudson Hall.gpx */,
 			);
 			path = HealthPal;
 			sourceTree = "<group>";
