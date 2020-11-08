@@ -35,7 +35,7 @@ class LocationController: UIViewController, MKMapViewDelegate, UITextFieldDelega
         
         // request notification permission
         center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
-                }
+        }
         
         idInput.delegate = self
         
@@ -142,15 +142,15 @@ class LocationController: UIViewController, MKMapViewDelegate, UITextFieldDelega
     
     func configureWashNotification(latitude: Double, longitude: Double, identifier: String) {
         let content = UNMutableNotificationContent()
-        content.title = "Time for handwashing!"
-        content.body = "Click to start timer."
+        content.title = "Handwashing Alert!"
+        content.body = "Click to start."
         content.sound = .default
         
-        let region = CLCircularRegion(center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), radius: 50, identifier: identifier)
+        let region = CLCircularRegion(center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), radius: 10, identifier: identifier)
         region.notifyOnEntry = true
         region.notifyOnExit = false
         
-        let trigger = UNLocationNotificationTrigger(region: region, repeats: false)
+        let trigger = UNLocationNotificationTrigger(region: region, repeats: true)
         let request = UNNotificationRequest(identifier: "wash", content: content, trigger: trigger)
         center.add(request, withCompletionHandler: nil)
     }
