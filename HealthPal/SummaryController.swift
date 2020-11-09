@@ -109,8 +109,8 @@ class SummaryController: UIViewController, WCSessionDelegate {
         var dateComponents = DateComponents()
         dateComponents.calendar = Calendar.current
         // get notification at 11am
-        dateComponents.hour = 0
-        dateComponents.minute = 53
+        dateComponents.hour = 11
+        dateComponents.minute = 0
         dateComponents.second = 0
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
