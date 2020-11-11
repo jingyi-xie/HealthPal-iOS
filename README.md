@@ -25,7 +25,7 @@
 
 ### How to Test
 * **Please use iPhone 12 and Apple Watch series 5 - 44mm for testing**
-* **Please give permission for notification and location**
+* **Please give permission for notification, location and health data**
 * On the iphone simulator, go to the "Watch" app, scroll down and make sure the HealthPal app is installed on the watch.
 * On the iphone simulator, go to "Watch"->"Notifications", make sure the notification of HealthPal is mirrored to the watch.
 
