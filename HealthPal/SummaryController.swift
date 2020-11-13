@@ -80,12 +80,14 @@ class SummaryController: UIViewController, WCSessionDelegate {
         if message["type"] as! String == "wash" {
             DispatchQueue.main.async {
                 self.newController.createNewHandwashing()
+                self.configureSummaryLabels()
             }
         }
         else if message["type"] as! String == "weight" {
             let value = message["value"] as! Int64
             DispatchQueue.main.async {
                 self.newController.createNewWeight(value: value, unit: "lbs")
+                self.configureSummaryLabels()
             }
         }
     }
